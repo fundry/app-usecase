@@ -2,14 +2,23 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>home</p>
+
+    <div>
+      <Recent />
+    </div>
   </div>
 </template>
 
 <script>
+import Recent from "./recent";
+
 export default {
   name: "Home",
   props: {
     msg: String
+  },
+  components: {
+    Recent
   }
 };
 </script>
