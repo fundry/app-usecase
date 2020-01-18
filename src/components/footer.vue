@@ -1,6 +1,13 @@
 <template>
-  <div id="footer">
-    <h3>Usecase.io</h3>
+  <div>
+    <div id="create">
+      <p>Recently made a hard choice ?</p>
+      <button>Create A Case</button>
+    </div>
+
+    <footer id="footer">
+      <h3>Usecase.io</h3>
+    </footer>
   </div>
 </template>
 
@@ -20,10 +27,24 @@ export default {
   background: grey;
 }
 
-h3 {
-  color: chocolate;
+#create {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 15px;
+  justify-content: space-between;
+}
+
+button {
+  background: transparent;
+  color: black;
+  border: 1px solid black;
+  padding: 0.3em 1.3em;
+  border-radius: 7px;
+}
+
+p {
   font-weight: lighter;
-  font-size: 1.7em;
+  font-size: 1.2em;
 }
 
 a {

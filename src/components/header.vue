@@ -1,10 +1,12 @@
 <template>
   <div class="body">
-    <h3>Usecase</h3>
+    <h3 id="title">Usecase</h3>
 
     <ul>
       <a href="/">Cases</a>
-      <a href="/">Sign in</a>
+      <a href="/">Login</a>
+
+      <button>Create Account</button>
     </ul>
   </div>
 </template>
@@ -21,14 +23,25 @@ div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0.5em;
-  box-shadow: 0px 5px 5px grey;
+  padding: 0.2em 1em;
+  padding-top: 10px;
+  box-shadow: 0px 3px 5px grey;
 }
 
-h3 {
+button {
+  background: transparent;
+  color: black;
+  border: 1px solid black;
+  padding: 0.4em 1.1em;
+  border-radius: 7px;
+  margin-left: 20px;
+}
+
+#title {
   color: chocolate;
   font-weight: lighter;
-  font-size: 1.5em;
+  padding-top: 4px;
+  font-size: 1.7em;
 }
 
 ul {
@@ -41,6 +54,6 @@ li {
 }
 a {
   color: #42b983;
-  padding-left: 10px;
+  margin-left: 20px;
 }
 </style>

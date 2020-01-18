@@ -9,6 +9,7 @@
 
     <div>
       <Uses />
+      <Document />
       <Recent />
     </div>
   </div>
@@ -17,12 +18,14 @@
 <script>
 import Recent from "./recent";
 import Uses from "./uses";
+import Document from "./document";
 
 export default {
   name: "Home",
 
   components: {
     Recent,
+    Document,
     Uses
   }
 };
