@@ -2,7 +2,7 @@
   <div class="banner">
     <Header />
 
-    <div>
+    <div id="body">
       <h1>Want to make a pick ?</h1>
 
       <p>Make choices based on recent choices made by others and see how it fits your usecase.</p>
@@ -25,6 +25,10 @@ export default {
 <style scoped>
 h1 {
   text-align: center;
+}
+
+#body {
+  padding: 2em;
 }
 
 p {

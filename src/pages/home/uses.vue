@@ -1,15 +1,15 @@
 <template >
-  <h4>Recently Featured Cases</h4>
+  <h3>Usecases For Everyone</h3>
 </template>
 
 <script>
 export default {
-  name: "Home"
+  name: "Uses"
 };
 </script>
 
 <style scoped>
-h4 {
-  padding-left: 30px;
+h3 {
+  text-align: center;
 }
 </style>

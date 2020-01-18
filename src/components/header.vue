@@ -2,24 +2,27 @@
   <div class="body">
     <h3>Usecase</h3>
 
-    <a href="/">Cases</a>
-    <a href="/">Sign in</a>
+    <ul>
+      <a href="/">Cases</a>
+      <a href="/">Sign in</a>
+    </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Header",
-  props: {
-    msg: String
-  }
+  name: "Header"
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-body {
+div {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5em;
+  box-shadow: 0px 5px 5px grey;
 }
 
 h3 {
