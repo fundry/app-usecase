@@ -7,16 +7,21 @@
 
     <footer id="footer">
       <h3>Usecase.io</h3>
+
+      <div>
+        <div id="column">
+          <h5 id="title">ABOUT</h5>
+
+          <p>Resources</p>
+        </div>
+      </div>
     </footer>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Footer",
-  props: {
-    msg: String
-  }
+  name: "Footer"
 };
 </script>
 
@@ -25,6 +30,9 @@ export default {
 #footer {
   padding: 1em;
   background: grey;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 #create {
@@ -32,6 +40,14 @@ export default {
   flex-direction: row;
   padding: 10px 15px;
   justify-content: space-between;
+}
+
+#column {
+  flex-direction: column;
+}
+
+#title {
+  padding-bottom: 15px;
 }
 
 button {
