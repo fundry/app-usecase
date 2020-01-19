@@ -3,7 +3,7 @@
     <h3 id="title">Usecase</h3>
 
     <ul>
-      <a href="/">Cases</a>
+      <router-link to="/test">Cases</router-link>
       <a href="/">Login</a>
 
       <button>Create Account</button>
@@ -11,7 +11,12 @@
   </div>
 </template>
 
-<script>
+<script lang="ts" >
+import Vue from "vue";
+import VueRouter from "vue-router";
+
+Vue.use(VueRouter);
+
 export default {
   name: "Header"
 };
