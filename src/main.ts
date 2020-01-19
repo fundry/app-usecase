@@ -4,7 +4,7 @@ import VueApollo from 'vue-apollo';
 
 import App from './App.vue';
 import apolloClient from './data/config';
-import { Home, Login, Create } from './pages/';
+import { Home, Login, Create   } from './pages/';
 
 // const routes = [
 //   { path: '/', component: Home, name: "Home" },
@@ -16,9 +16,10 @@ Vue.config.productionTip = false;
 
 const router = new VueRouter({
   routes: [
-    { path: '/', component: App, name: 'Home' },
-    { path: '/login', component: Login, name: 'Login' },
+    { path: '/', component: Home, name: 'Home' },
+    {  path: '/login', component: Login, name: 'Login' },
     { path: '/create', component: Create, name: 'Create' },
+    { path: '/app', component: App, name: 'Create' },
   ],
 });
 
@@ -30,6 +31,6 @@ const apolloProvider = new VueApollo({
 
 new Vue({
   apolloProvider,
-  router,
-  render: (h) => h(Create),
+  // router,
+  render: (h) => h(App),
 }).$mount('#app');

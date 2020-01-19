@@ -33,7 +33,7 @@ import { Header, Footer } from "../../components";
 export default class App extends Vue {}
 </script>
 
-<style>
+<style scoped >
 #body {
   margin: 1em;
   margin-top: 5em;
