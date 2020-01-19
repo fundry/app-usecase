@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="login">
     <Banner />
-    <p> Login  </p>
+    <p>Login</p>
 
     <br />
     <Footer />

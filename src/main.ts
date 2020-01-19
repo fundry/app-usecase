@@ -1,32 +1,35 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import VueApollo from 'vue-apollo'
- 
+import VueApollo from 'vue-apollo';
+
 import App from './App.vue';
-import apolloClient from './data/config'
+import apolloClient from './data/config';
+import { Home, Login, Create } from './pages/';
 
-const Foo = { template: '<div>foo</div>' };
-const Bar = { template: '<div>bar</div>' };
-
-const routes = [
-  { path: '/test', component: Foo },
-  { path: '/bar', component: Bar },
-];
+// const routes = [
+//   { path: '/', component: Home, name: "Home" },
+//   { path: '/login', component: Login, name: "Login" },
+//   { path: '/create', component: Create, name: "Create"  },
+// ];
 
 Vue.config.productionTip = false;
 
 const router = new VueRouter({
-  routes 
+  routes: [
+    { path: '/', component: App, name: 'Home' },
+    { path: '/login', component: Login, name: 'Login' },
+    { path: '/create', component: Create, name: 'Create' },
+  ],
 });
 
-Vue.use(VueApollo);
+Vue.use(VueApollo , VueRouter);
 
 const apolloProvider = new VueApollo({
-  defaultClient: apolloClient 
-})
+  defaultClient: apolloClient,
+});
 
 new Vue({
+  apolloProvider,
   router,
-  apolloProvider , 
-  render: (h) => h(App),
+  // render: (h) => h(App),
 }).$mount('#app');

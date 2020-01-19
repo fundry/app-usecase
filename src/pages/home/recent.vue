@@ -7,7 +7,7 @@
     </div>
 
     <div id="box">
-      <h6>Facebook</h6>
+      <h6 id="org">Facebook</h6>
 
       <h6 id="title">Adopting Hasura Graphql Engine</h6>
 
@@ -23,7 +23,8 @@ export default {
 </script>
 
 <style scoped>
-h4 {
+h5 {
+  padding-top: 7px;
   padding-left: 20px;
 }
 
@@ -31,7 +32,10 @@ h4 {
   padding: 0.5em;
   background: #e5e5e5;
 }
-
+#org {
+  cursor: pointer;
+  font-weight: bold;
+}
 #head {
   display: flex;
   justify-content: space-between;
@@ -50,7 +54,6 @@ h4 {
   margin: 0.5em;
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
 }
 
 input {
