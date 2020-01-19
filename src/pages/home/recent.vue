@@ -1,8 +1,18 @@
 <template >
-  <div id="head">
-    <h4>Recently Featured Cases</h4>
+  <div id="body">
+    <div id="head">
+      <h5>Recently Featured Cases</h5>
 
-    <input placeholder="Search Case" />
+      <input placeholder="Search Case" />
+    </div>
+
+    <div id="box">
+      <h6>Facebook</h6>
+
+      <h6 id="title">Adopting Hasura Graphql Engine</h6>
+
+      <h6>Stats</h6>
+    </div>
   </div>
 </template>
 
@@ -14,13 +24,33 @@ export default {
 
 <style scoped>
 h4 {
-  padding-left: 30px;
+  padding-left: 20px;
+}
+
+#body {
+  padding: 0.5em;
+  background: #e5e5e5;
 }
 
 #head {
   display: flex;
   justify-content: space-between;
   padding: 0.5em 1em;
+}
+
+#title {
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+#box {
+  padding: 0.7em 1.5em;
+  background: #fff;
+  border-radius: 5px;
+  margin: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
 }
 
 input {

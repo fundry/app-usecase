@@ -24,11 +24,15 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1 {
-  text-align: center;
+  font-weight: bolder;
 }
 
 #body {
+  text-align: center;
+
   padding: 2em;
+  background: #f2f5ff;
+  color: #1d2279;
 }
 
 p {

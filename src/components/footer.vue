@@ -6,14 +6,35 @@
     </div>
 
     <footer id="footer">
-      <h3>Usecase.io</h3>
+      <div id="foot">
+        <h3>Usecase.io</h3>
 
-      <div>
-        <div id="column">
-          <h5 id="title">ABOUT</h5>
+        <div>
+          <div id="column">
+            <h5 id="title">PRODUCT</h5>
 
-          <p>Resources</p>
+            <a>Resources</a>
+            <a>Resources</a>
+            <a>Resources</a>
+          </div>
         </div>
+
+        <div>
+          <div id="column">
+            <h5 id="title">ABOUT</h5>
+
+            <a>Resources</a>
+            <a>Resources</a>
+            <a>Resources</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="bottom">
+        <p>
+          Copyright @2020
+          <br />All rights reserved.
+        </p>
       </div>
     </footer>
   </div>
@@ -29,10 +50,21 @@ export default {
 <style scoped>
 #footer {
   padding: 1em;
-  background: grey;
+  background: #e5e5e5;
+}
+
+#foot {
+  padding: 0.5em;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+}
+
+#bottom {
+  margin: 0.5em;
+  text-align: center;
+  font-size: 0.77em;
+  color: black;
 }
 
 #create {
@@ -47,7 +79,7 @@ export default {
 }
 
 #title {
-  padding-bottom: 15px;
+  padding-bottom: 10px;
 }
 
 button {

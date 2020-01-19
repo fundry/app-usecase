@@ -1,8 +1,8 @@
 <template >
   <div id="body">
-    <h3>Usecases For Everyone</h3>
+    <h4>Usecases For Everyone</h4>
 
-    <p>From technical to non - technical folks, everyone has to make a choice and see how their choice fits their usecase.</p>
+    <p> Everyone can make a case on their usecase.</p>
   </div>
 </template>
 
@@ -11,6 +11,7 @@ export default {
   name: "Uses"
 };
 </script>
+
 
 <style scoped>
 #body {

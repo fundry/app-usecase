@@ -1,16 +1,17 @@
 <template>
   <div class="hello">
     <div id="body">
-      <p>
-        We all most times have to make a choice between two or more items. From technical to non technical people ,
+      <p id="desc" >
+         From technical to non technical people ,
         <b>Usecase</b> helps you make better choices by going through other people's usecases and how their usecase can match yours .
       </p>
     </div>
 
     <div>
       <Uses />
-      <Document />
       <Recent />
+
+      <Document />
     </div>
   </div>
 </template>
@@ -36,14 +37,13 @@ export default {
 #body {
   padding: 0.5em;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+#desc {
+  padding: 1em;
+  font-size: 1.2em;
+  text-align: center
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
+ 
 a {
   color: #42b983;
 }
