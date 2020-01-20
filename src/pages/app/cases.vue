@@ -1,20 +1,34 @@
 <template>
   <div>
     <div id="top">
-      <h5>Case</h5>
-      <button>Create New Case</button>
+      <h5>Usecases</h5>
+      <button>Create New Usecase</button>
     </div>
     <hr />
+
+    <div id="body">
+      <h1>
+        Welcome
+        <b>Nwani Victory</b>
+      </h1>
+      <p id="desc">
+        You're yet to create a case.
+        <br />Usecase are contained within single cases.
+      </p>
+      <a href="/">Learn More</a>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 
-@Component({
-  components: {}
-})
-export default class App extends Vue {}
+export default {
+  name: "Cases",
+  data: () => {
+    // hasCase: false;
+  }
+};
 </script>
 
 <style scoped>
@@ -22,6 +36,17 @@ export default class App extends Vue {}
   display: flex;
   justify-content: space-between;
   padding: 0.5em 2em;
+}
+
+#body {
+  text-align: center;
+  margin: 5em;
+}
+h5 {
+  padding-top: 10px;
+}
+#desc {
+  font-size: 1.4em;
 }
 
 button {

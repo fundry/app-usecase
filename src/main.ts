@@ -32,5 +32,5 @@ const apolloProvider = new VueApollo({
 new Vue({
   apolloProvider,
   // router,
-  render: (h) => h(Create),
+  render: (h) => h(Console),
 }).$mount('#app');

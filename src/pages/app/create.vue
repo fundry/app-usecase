@@ -40,7 +40,7 @@ export default class App extends Vue {}
   text-align: center;
 }
 
-input {
+input[type="text"] {
   padding-left: 20px;
   width: 55em;
   height: 60px;

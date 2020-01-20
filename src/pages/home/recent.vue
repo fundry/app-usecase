@@ -3,38 +3,43 @@
     <div id="head">
       <h5>Recently Featured Cases</h5>
 
-      <input placeholder="Search Case" />
+      <input type="text" placeholder="Search Case" />
     </div>
 
-    <div id="box">
-      <h6 id="org">Facebook</h6>
+    <!-- mapping in Vuejs -->
+    <div v-bind:key="data.id" v-for="data in data">
+      <div id="box">
+        <h6 id="org">{{data.name}}</h6>
 
-      <h6 id="title">Adopting Hasura Graphql Engine</h6>
+        <h6 id="title">{{data.Title}}</h6>
 
-      <h6>Stats</h6>
-    </div>
-    <br />
-    <div id="box">
-      <h6 id="org">FlutterWave</h6>
-
-      <h6 id="title">Adopting Prisma Postgresql</h6>
-
-      <h6>Stats</h6>
-    </div>
-    <br />
-    <div id="box">
-      <h6 id="org">Andela</h6>
-
-      <h6 id="title">Using Google Kubernettes at Scale</h6>
-
-      <h6>Stats</h6>
+        <h6>Stats</h6>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home"
+  name: "Home",
+  data: () => {
+    return {
+      txt: "Testing",
+      data: [
+        {
+          key: 1,
+          name: "FlutterWave",
+          Title: "Adopting Hasura Graphql Engine"
+        },
+        {
+          key: 2,
+          name: "Andela",
+          Title: "Adopting Hasura Graphql Engine"
+        },
+        { key: 3, name: "Facebook", Title: "Adopting Hasura Graphql Engine" }
+      ]
+    };
+  }
 };
 </script>
 
@@ -70,9 +75,10 @@ h5 {
   margin: 0.5em;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-input {
+input[type="text"] {
   padding: 0.3em;
   height: auto;
   border: 1px solid black;

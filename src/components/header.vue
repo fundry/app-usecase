@@ -6,7 +6,7 @@
       <router-link to="/create" id="link">Cases</router-link>
       <router-link to="/login" id="link">Login</router-link>
 
-      <button>Create Account</button>
+      <button v-on="hi">Create Account</button>
     </ul>
   </div>
 </template>
