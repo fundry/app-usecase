@@ -1,10 +1,10 @@
 <template >
-  <div>
+  <div id="body">
     <br />
 
-    <h4>Document and Publish your Usecase</h4>
+    <h4>Document Your Usecase ...</h4>
 
-    <p>Document and publish your usecase without having to manually write about it.</p>
+    <p>Document your usecase without having to manually write about it.</p>
   </div>
 </template>
 
@@ -16,10 +16,13 @@ export default {
 
 <style scoped>
 h4 {
-  text-align: center;
+}
+
+#body {
+  text-align: left;
+  margin-left: 25px;
 }
 
 p {
-  text-align: center;
 }
 </style>

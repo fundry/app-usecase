@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
     <div id="body">
-      <p id="desc" >
-         From technical to non technical people ,
+      <p id="desc">
+        From technical to non technical people ,
         <b>Usecase</b> helps you make better choices by going through other people's usecases and how their usecase can match yours .
       </p>
     </div>
@@ -12,6 +12,7 @@
       <Recent />
 
       <Document />
+      <Publish />
     </div>
   </div>
 </template>
@@ -20,19 +21,20 @@
 import Recent from "./recent";
 import Uses from "./uses";
 import Document from "./document";
+import Publish from "./publish";
 
 export default {
   name: "Home",
 
   components: {
     Recent,
+    Publish,
     Document,
     Uses
   }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #body {
   padding: 0.5em;
@@ -41,9 +43,9 @@ export default {
 #desc {
   padding: 1em;
   font-size: 1.2em;
-  text-align: center
+  text-align: center;
 }
- 
+
 a {
   color: #42b983;
 }

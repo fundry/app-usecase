@@ -1,5 +1,5 @@
 <template>
-  <div class="banner">
+  <div>
     <Header />
 
     <div id="body">
@@ -29,7 +29,6 @@ h1 {
 
 #body {
   text-align: center;
-
   padding: 2em;
   background: #f2f5ff;
   color: #1d2279;

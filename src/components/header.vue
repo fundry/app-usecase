@@ -3,8 +3,8 @@
     <h3 id="title">Usecase</h3>
 
     <ul>
-      <router-link to="/create">Cases</router-link>
-      <router-link to="/login">Login</router-link>
+      <router-link to="/create" id="link">Cases</router-link>
+      <router-link to="/login" id="link">Login</router-link>
 
       <button>Create Account</button>
     </ul>
@@ -22,6 +22,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 div {
+  background: transparent;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -35,7 +36,7 @@ button {
   color: black;
   border: 1px solid black;
   padding: 0.4em 1.1em;
-  border-radius: 7px;
+  border-radius: 5px;
   margin-left: 20px;
 }
 
@@ -54,7 +55,7 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
+#link {
   color: #42b983;
   margin-left: 20px;
 }

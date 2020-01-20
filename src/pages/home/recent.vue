@@ -13,6 +13,22 @@
 
       <h6>Stats</h6>
     </div>
+    <br />
+    <div id="box">
+      <h6 id="org">FlutterWave</h6>
+
+      <h6 id="title">Adopting Prisma Postgresql</h6>
+
+      <h6>Stats</h6>
+    </div>
+    <br />
+    <div id="box">
+      <h6 id="org">Andela</h6>
+
+      <h6 id="title">Using Google Kubernettes at Scale</h6>
+
+      <h6>Stats</h6>
+    </div>
   </div>
 </template>
 

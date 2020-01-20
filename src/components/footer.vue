@@ -7,7 +7,9 @@
 
     <footer id="footer">
       <div id="foot">
-        <h3>Usecase.io</h3>
+        <h3 id="brand">
+          <a href="/">Usecase.io</a>
+        </h3>
 
         <div>
           <div id="column">
@@ -22,18 +24,19 @@
         <div>
           <div id="column">
             <h5 id="title">ABOUT</h5>
-
-            <a>Resources</a>
-            <a>Resources</a>
-            <a>Resources</a>
+            <div>
+              <a>Resources</a>
+              <a>Resources</a>
+              <a>Resources</a>
+            </div>
           </div>
         </div>
       </div>
 
       <div id="bottom">
         <p>
-          Copyright @2020
-          <br />All rights reserved.
+          Copyright @2020 ,
+          All rights reserved.
         </p>
       </div>
     </footer>
@@ -46,10 +49,9 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #footer {
-  padding: 1em;
+  padding: 0.5em 1em;
   background: #e5e5e5;
 }
 
@@ -60,8 +62,12 @@ export default {
   flex-direction: row;
 }
 
+#brand {
+  margin-top: 20px;
+}
+
 #bottom {
-  margin: 0.5em;
+  margin: 0.3em;
   text-align: center;
   font-size: 0.77em;
   color: black;
@@ -86,13 +92,13 @@ button {
   background: transparent;
   color: black;
   border: 1px solid black;
-  padding: 0.3em 1.3em;
+  padding: 0.1em 1.3em;
   border-radius: 7px;
 }
 
 p {
   font-weight: lighter;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 
 a {
