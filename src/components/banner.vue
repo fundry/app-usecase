@@ -16,7 +16,7 @@
 
 <script>
 import Header from "./header";
-import { cover } from "../assets/svg";
+// import { cover } from "../assets/svg";
 
 export default {
   name: "Banner",
