@@ -3,6 +3,10 @@
     <Header />
 
     <div id="body">
+      <div id="cover">
+        <img src="../assets/svg/cover.svg" alt="illustration" />
+      </div>
+
       <h1>Want to make a pick ?</h1>
 
       <p>Make choices based on recent choices made by others and see how it fits your usecase.</p>
@@ -12,6 +16,7 @@
 
 <script>
 import Header from "./header";
+import { cover } from "../assets/svg";
 
 export default {
   name: "Banner",
@@ -25,6 +30,10 @@ export default {
 <style scoped>
 h1 {
   font-weight: bolder;
+}
+
+#cover {
+  text-align: center;
 }
 
 #body {

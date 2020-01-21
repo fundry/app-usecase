@@ -1,5 +1,5 @@
 <template>
-  <div class="body">
+  <div class="body" id="contain">
     <h3 id="title">Usecase</h3>
 
     <ul>
@@ -21,7 +21,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-div {
+#contain {
   background: transparent;
   display: flex;
   flex-direction: row;

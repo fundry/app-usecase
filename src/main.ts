@@ -6,11 +6,7 @@ import App from './App.vue';
 import apolloClient from './data/config';
 import { Home, Login, Create, App as Console, Signup } from './pages/';
 
-// const routes = [
-//   { path: '/', component: Home, name: "Home" },
-//   { path: '/login', component: Login, name: "Login" },
-//   { path: '/create', component: Create, name: "Create"  },
-// ];
+import store from './state/';
 
 Vue.config.productionTip = false;
 
@@ -30,7 +26,9 @@ const apolloProvider = new VueApollo({
 });
 
 new Vue({
+  store,
+  router,
   apolloProvider,
   // router,
-  render: (h) => h(Console),
+  render: (h) => h(App),
 }).$mount('#app');
