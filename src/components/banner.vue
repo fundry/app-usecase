@@ -28,8 +28,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+img {
+  max-width: 35em;
+  height: auto;
+  align-self: auto;
+}
+
 h1 {
   font-weight: bolder;
+  font-size: 3em;
 }
 
 #cover {
@@ -37,6 +44,9 @@ h1 {
 }
 
 #body {
+  /* @media screen and (max-width: 1020px) {
+    background: black;
+  } */
   text-align: center;
   padding: 2em;
   background: #f2f5ff;

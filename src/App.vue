@@ -29,4 +29,12 @@ export default class App extends Vue {}
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
+
+p {
+  font-size: 1.3em;
+}
+
+h3 {
+  font-weight: bold;
+}
 </style>

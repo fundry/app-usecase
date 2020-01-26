@@ -1,8 +1,14 @@
 <template >
   <div id="body">
-    <h4>Usecases For Everyone</h4>
+    <h3>Usecases For Everyone</h3>
 
-    <p> Everyone can make a case on their usecase.</p>
+    <p>Everyone can create a Usecase within their Cases.</p>
+
+    <div>
+      <img alt="illustration" src="../../assets/svg/sample.svg" />
+    </div>
+
+    <br />
   </div>
 </template>
 

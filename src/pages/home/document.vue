@@ -2,7 +2,7 @@
   <div id="body">
     <br />
 
-    <h4>Document Your Usecase ...</h4>
+    <h3>Document Your Usecase ...</h3>
 
     <p>Document your usecase without having to manually write about it.</p>
   </div>

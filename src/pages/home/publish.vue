@@ -2,7 +2,11 @@
   <div id="body">
     <br />
 
-    <h4>Publish your Usecase In Few Steps ...</h4>
+    <div>
+      <img alt="illustration" src="../../assets/svg/sample.svg" />
+    </div>
+
+    <h3>Publish your Usecase In Few Steps ...</h3>
 
     <p>Publish your usecase without having to manually write about it.</p>
 
@@ -11,6 +15,8 @@
 </template>
 
 <script>
+// import styled from "vue-styled-components";------ not installed
+
 export default {
   name: "Publish"
 };

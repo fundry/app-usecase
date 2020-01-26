@@ -3,25 +3,37 @@
     <div id="head">
       <h5>Recently Featured Cases</h5>
 
-      <input type="text" placeholder="Search Case" />
+      <div>
+        <v-icon name="search" id="icon" />
+        <input type="text" placeholder="Search Case" />
+      </div>
     </div>
 
     <!-- mapping in Vuejs -->
-    <div v-bind:key="data.id" v-for="data in data">
+    <div v-bind:key="d.id" v-for="d in data">
       <div id="box">
-        <h6 id="org">{{data.name}}</h6>
+        <h6 id="org">{{d.name}}</h6>
 
-        <h6 id="title">{{data.Title}}</h6>
+        <h6 id="title">{{d.Title}}</h6>
 
-        <h6>Stats</h6>
+        <div id="stats">
+          <h6 id="ico">SS</h6>
+          <h6 id="ico">VV</h6>
+          <h6 id="ico">RR</h6>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
-<script>
+<script lang="ts" >
+import Icon from "vue-awesome/components/Icon";
+
 export default {
   name: "Home",
+  components: {
+    "v-icon": Icon
+  },
   data: () => {
     return {
       txt: "Testing",
@@ -44,6 +56,10 @@ export default {
 </script>
 
 <style scoped>
+#ico {
+  margin: 0.1em 0.5em;
+}
+
 h5 {
   padding-top: 7px;
   padding-left: 20px;
@@ -57,6 +73,11 @@ h5 {
   cursor: pointer;
   font-weight: bold;
 }
+
+#icon {
+  font-size: 1.4em;
+}
+
 #head {
   display: flex;
   justify-content: space-between;
@@ -76,6 +97,10 @@ h5 {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+}
+
+#stats {
+  display: flex;
 }
 
 input[type="text"] {
