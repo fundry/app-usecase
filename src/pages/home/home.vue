@@ -1,10 +1,9 @@
 <template>
   <div class="hello">
     <div id="body">
-      <p id="desc">
-        From technical to non technical people ,
-        <b>Usecase</b> helps you make better choices by going through other people's usecases and how their usecase can match yours .
-      </p>
+      <p
+        id="desc"
+      >Usecase helps you make better choices by getting a direct peep into other people's Usecases can help influence your descisions.</p>
     </div>
 
     <div>
@@ -42,8 +41,8 @@ export default {
 
 #desc {
   padding: 1em;
-  font-size: 1.2em;
   text-align: center;
+  font-size: 1.57em;
 }
 
 a {

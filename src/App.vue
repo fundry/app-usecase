@@ -31,7 +31,7 @@ export default class App extends Vue {}
 }
 
 p {
-  font-size: 1.3em;
+  font-size: 1.4em;
 }
 
 h3 {

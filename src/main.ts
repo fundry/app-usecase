@@ -4,7 +4,15 @@ import VueApollo from 'vue-apollo';
 
 import App from './App.vue';
 import apolloClient from './data/config';
-import { Home, Login, Create, App as Console, Signup } from './pages/';
+import {
+  Home,
+  Login,
+  CreateCase,
+  CreateUsecase,
+  App as Console,
+  Signup,
+  Import,
+} from './pages/';
 
 import store from './state/';
 
@@ -14,7 +22,8 @@ const router = new VueRouter({
   routes: [
     { path: '/', component: Home, name: 'Home' },
     { path: '/login', component: Login, name: 'Login' },
-    { path: '/create', component: Create, name: 'Create' },
+    { path: '/create-case', component: CreateCase, name: 'Create Case' },
+    { path: '/create-usecase', component: CreateUsecase, name: 'Create Case' },
     { path: '/signup', component: Signup, name: 'Signup' },
   ],
 });
@@ -30,5 +39,5 @@ new Vue({
   router,
   apolloProvider,
   // router,
-  render: (h) => h(App),
+  render: (h) => h(Import),
 }).$mount('#app');

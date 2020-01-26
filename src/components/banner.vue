@@ -7,7 +7,7 @@
         <img src="../assets/svg/cover.svg" alt="illustration" />
       </div>
 
-      <h1>Want to make a pick ?</h1>
+      <h1>A Collection of your Actions</h1>
 
       <p>Make choices based on recent choices made by others and see how it fits your usecase.</p>
     </div>

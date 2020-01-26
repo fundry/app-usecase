@@ -15,7 +15,9 @@
         You're yet to create a case.
         <br />Usecase are contained within single cases.
       </p>
-      <a href="/">Learn More</a>
+      <div>
+        <button id="create">Create Case</button>
+      </div>
     </div>
   </div>
 </template>
@@ -50,10 +52,10 @@ h5 {
 }
 
 button {
-  padding: 0.5em 2em;
+  padding: 0.7em 2em;
   background: transparent;
   color: black;
-  border-radius: 3px;
+  border-radius: 5px;
   border: 1.3px solid black;
 }
 
@@ -65,5 +67,13 @@ button {
 }
 #contain {
   display: flex;
+}
+
+#create {
+  background: transparent;
+  color: black;
+  border: 1px solid black;
+  padding: 0.7em 7em;
+  border-radius: 5px;
 }
 </style>

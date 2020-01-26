@@ -3,8 +3,8 @@
     <div id="head">
       <h5>Recently Featured Cases</h5>
 
-      <div>
-        <v-icon name="search" id="icon" />
+      <div id="input-box">
+        <v-icon name="search" id="icon" scale="2" />
         <input type="text" placeholder="Search Case" />
       </div>
     </div>
@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts" >
-import Icon from "vue-awesome/components/Icon";
+import Icon from "vue-awesome/components/Icon.vue";
 
 export default {
   name: "Home",
@@ -48,7 +48,8 @@ export default {
           name: "Andela",
           Title: "Adopting Hasura Graphql Engine"
         },
-        { key: 3, name: "Facebook", Title: "Adopting Hasura Graphql Engine" }
+        { key: 3, name: "Facebook", Title: "Adopting Hasura Graphql Engine" },
+        { key: 3, name: "Medium", Title: "Google Kubernettes Engine" }
       ]
     };
   }
@@ -58,6 +59,14 @@ export default {
 <style scoped>
 #ico {
   margin: 0.1em 0.5em;
+}
+
+#input-box {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 0.3em;
+  width: 24em;
+  height: auto;
 }
 
 h5 {
@@ -72,12 +81,10 @@ h5 {
 #org {
   cursor: pointer;
   font-weight: bold;
+  font-size: 1.3em;
 }
-
 #icon {
-  font-size: 1.4em;
 }
-
 #head {
   display: flex;
   justify-content: space-between;
@@ -104,12 +111,13 @@ h5 {
 }
 
 input[type="text"] {
-  padding: 0.3em;
+  padding: 0.5em;
+  border: none;
+  background: transparent;
   height: auto;
-  border: 1px solid black;
-  height: 45px;
+  outline: 0px;
   width: 21em;
-  border-radius: 10px;
-  padding-left: 20px;
+  border-radius: 0px;
+  padding-left: 15px;
 }
 </style>
