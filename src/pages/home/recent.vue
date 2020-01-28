@@ -3,9 +3,18 @@
     <div id="head">
       <h5>Recently Featured Cases</h5>
 
-      <div id="input-box">
-        <v-icon name="search" id="icon" scale="2" />
+      <div id="input-box" v-if="$mq === 'tablet'">
+        <v-icon name="regular/heart" id="icon" scale="2" />
         <input type="text" placeholder="Search Case" />
+      </div>
+
+      <div id="input-box" v-else-if="$mq === 'laptop'">
+        <v-icon name="regular/heart" id="icon" scale="2" />
+        <input type="text" placeholder="Search Case" />
+      </div>
+
+      <div v-else-if="$mq === 'mobile'">
+        <v-icon name="regular/heart" sclae="2" />
       </div>
     </div>
 
@@ -27,6 +36,7 @@
 </template>
 
 <script lang="ts" >
+import Vue from "vue";
 import Icon from "vue-awesome/components/Icon.vue";
 
 export default {

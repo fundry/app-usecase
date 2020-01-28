@@ -1,9 +1,9 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import VueApollo from 'vue-apollo';
+import Vue from "vue";
+import VueRouter from "vue-router";
+import VueApollo from "vue-apollo";
 
-import App from './App.vue';
-import apolloClient from './data/config';
+import App from "./App.vue";
+import apolloClient from "./data/config";
 import {
   Home,
   Login,
@@ -11,27 +11,33 @@ import {
   CreateUsecase,
   App as Console,
   Signup,
-  Import,
-} from './pages/';
+  Import
+} from "./pages/";
 
-import store from './state/';
+import store from "./state/";
+import './assets/css/variables.css'
 
 Vue.config.productionTip = false;
 
 const router = new VueRouter({
   routes: [
-    { path: '/', component: Home, name: 'Home' },
-    { path: '/login', component: Login, name: 'Login' },
-    { path: '/create-case', component: CreateCase, name: 'Create Case' },
-    { path: '/create-usecase', component: CreateUsecase, name: 'Create Case' },
-    { path: '/signup', component: Signup, name: 'Signup' },
-  ],
+    { path: "/", component: Home, name: "Home" },
+    { path: "/login", component: Login, name: "Login" },
+    { path: "/create-case", component: CreateCase, name: "Create Case" },
+    {
+      path: "/create-usecase",
+      component: CreateUsecase,
+      name: "Create Usecase"
+    },
+    { path: "/signup", component: Signup, name: "Signup" }
+  ]
 });
 
 Vue.use(VueApollo, VueRouter);
 
+
 const apolloProvider = new VueApollo({
-  defaultClient: apolloClient,
+  defaultClient: apolloClient
 });
 
 new Vue({
@@ -39,5 +45,5 @@ new Vue({
   router,
   apolloProvider,
   // router,
-  render: (h) => h(App),
-}).$mount('#app');
+  render: h => h(App)
+}).$mount("#app");

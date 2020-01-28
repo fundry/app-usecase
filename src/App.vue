@@ -32,7 +32,7 @@ Vue.use(VueMq, {
 export default class App extends Vue {}
 </script>
 
-<style>
+<style  lang="postcss" >
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -41,7 +41,17 @@ export default class App extends Vue {}
 }
 
 p {
-  font-size: 1.4em;
+  @media (max-width: 400px;) {
+    font-size: 1.2em;
+  }
+
+  @media (max-width: 900px;) {
+    font-size: 1.3em;
+  }
+
+  @media (max-width: 1200px;) {
+    font-size: 1.4em;
+  }
 }
 
 h3 {

@@ -6,11 +6,10 @@
       <div id="cover" v-if="$mq === 'tablet'">
         <img src="../assets/svg/cover.svg" alt="illustration" class="img" :class="$mq" />
       </div>
-      <div id="cover" v-if="$mq === 'laptop'">
+      <div id="cover" v-else-if="$mq === 'laptop'">
         <img src="../assets/svg/cover.svg" alt="illustration" class="img" :class="$mq" />
       </div>
-
-      <h1>A Collection of your Actions</h1>
+      <h1>A Collection of your Ations</h1>
 
       <p>
         Make choices based on recent choices made by others and see how it fits
@@ -45,7 +44,17 @@ export default {
 
 h1 {
   font-weight: bolder;
-  font-size: 3em;
+  @media (max-width: 400px;) {
+    font-size: 2em;
+  }
+
+  @media (max-width: 1200px;) {
+    font-size: 3em;
+  }
+
+  @media (max-width: 1500px;) {
+    font-size: 4em;
+  }
 }
 
 #cover {
