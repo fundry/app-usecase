@@ -2,12 +2,16 @@
   <div class="body" id="contain">
     <h3 id="title">Usecase</h3>
 
-    <ul>
+    <ul v-if="$mq === 'tablet'">
       <router-link to="/create" id="link">Cases</router-link>
       <router-link to="/login" id="link">Login</router-link>
 
       <button v-on="hi">Create Account</button>
     </ul>
+
+    <div v-if="$mq === 'mobile'">
+      <p>Menu</p>
+    </div>
   </div>
 </template>
 

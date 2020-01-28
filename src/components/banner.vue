@@ -3,20 +3,26 @@
     <Header />
 
     <div id="body">
-      <div id="cover">
-        <img src="../assets/svg/cover.svg" alt="illustration" />
+      <div id="cover" v-if="$mq === 'tablet'">
+        <img src="../assets/svg/cover.svg" alt="illustration" class="img" :class="$mq" />
+      </div>
+      <div id="cover" v-if="$mq === 'laptop'">
+        <img src="../assets/svg/cover.svg" alt="illustration" class="img" :class="$mq" />
       </div>
 
       <h1>A Collection of your Actions</h1>
 
-      <p>Make choices based on recent choices made by others and see how it fits your usecase.</p>
+      <p>
+        Make choices based on recent choices made by others and see how it fits
+        your usecase.
+      </p>
     </div>
   </div>
 </template>
 
 <script>
+import Vue from "vue";
 import Header from "./header";
-// import { cover } from "../assets/svg";
 
 export default {
   name: "Banner",
@@ -27,11 +33,14 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-img {
+<style scoped lang="postcss">
+.img {
   max-width: 35em;
   height: auto;
   align-self: auto;
+  &.mobile {
+    max-width: 20em;
+  }
 }
 
 h1 {

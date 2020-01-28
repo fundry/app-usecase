@@ -11,6 +11,16 @@
 import { Component, Vue } from "vue-property-decorator";
 import { Banner, Footer } from "./components/";
 import { Home } from "./pages/";
+import VueMq from "vue-mq";
+
+Vue.use(VueMq, {
+  breakpoints: {
+    mobile: 450,
+    tablet: 1100,
+    laptop: 1300,
+    desktop: Infinity
+  }
+});
 
 @Component({
   components: {

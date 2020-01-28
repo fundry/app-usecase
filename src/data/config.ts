@@ -1,8 +1,11 @@
 import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { onError } from 'apollo-link-error';
+import dotenv from 'dotenv'
 
 import { ApolloLink, HttpLink } from 'apollo-boost';
+
+dotenv.config()  // ------------> having issues with using vue default way of loading envs
 
 // from d vue-apollo docs ===============>>
 // const httpLink = createHttpLink({
@@ -15,7 +18,7 @@ import { ApolloLink, HttpLink } from 'apollo-boost';
 // });
 // const cache = new InMemoryCache();
 
-const ENDPOINT: string = process.env.GRAPHQL_ENDPOINT;
+const ENDPOINT: any = process.env.VUE_GRAPHQL_ENDPOINT;
 // CHECK HOW TO LOAD ENV VARS IN VUE
 console.log(ENDPOINT, 'ENDPOINTS');
 

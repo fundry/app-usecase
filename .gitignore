@@ -2,10 +2,10 @@
 node_modules
 /dist
 
+# all env files
 .env
-
-# local env files
 .env.local
+.env.production
 .env.*.local
 
 # Log files
