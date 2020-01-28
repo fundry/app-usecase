@@ -1,8 +1,21 @@
 <template>
   <div class="body" id="contain">
-    <h3 id="title">Usecase</h3>
+    <div id="flex">
+      <h3 id="title">Usecase</h3>
+
+      <div id="input-box" v-if="$mq === 'laptop'">
+        <input type="text" placeholder="Search Case" />
+      </div>
+    </div>
 
     <ul v-if="$mq === 'tablet'">
+      <router-link to="/create" id="link">Cases</router-link>
+      <router-link to="/login" id="link">Login</router-link>
+
+      <button v-on="hi">Create Account</button>
+    </ul>
+
+    <ul v-if="$mq === 'laptop'">
       <router-link to="/create" id="link">Cases</router-link>
       <router-link to="/login" id="link">Login</router-link>
 
@@ -25,6 +38,26 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+input[type="text"] {
+  padding: 0.3em;
+  border: none;
+  background: transparent;
+  height: 40px;
+  outline: 0px;
+  width: 22em;
+  border-radius: 0px;
+  padding-left: 15px;
+}
+
+#input-box {
+  margin-left: 30px;
+  border-radius: 5px;
+  padding: 0.2em;
+  width: 27em;
+  height: 44px;
+  box-shadow: 0px 3px 5px grey;
+}
+
 #contain {
   background: transparent;
   display: flex;

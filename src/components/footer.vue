@@ -2,21 +2,26 @@
   <div>
     <div id="create">
       <p>Recently made a hard choice ?</p>
-      <button>Create A Case</button>
+      <button>Create A UseCase</button>
     </div>
 
-    <footer id="footer">
+    <footer id="footer" v-if="$mq === 'laptop'">
       <div id="foot">
-        <h3 id="brand">
-          <a href="/">Usecase.io</a>
-        </h3>
+        <div>
+          <h3 id="brand">
+            <a href="/">Usecase.io</a>
+          </h3>
 
+          <div id="media-icons">
+            <p>IN</p>
+            <p>TW</p>
+            <p>Git</p>
+          </div>
+        </div>
         <div>
           <div id="column">
             <h5 id="title">PRODUCT</h5>
 
-            <a>Resources</a>
-            <a>Resources</a>
             <a>Resources</a>
           </div>
         </div>
@@ -26,7 +31,107 @@
             <h5 id="title">ABOUT</h5>
             <div>
               <a>Resources</a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div id="column">
+            <h5 id="title">ABOUT</h5>
+            <div>
               <a>Resources</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="bottom">
+        <p>
+          Copyright @2020 ,
+          All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <footer id="footer" v-if="$mq === 'tablet'">
+      <div id="foot">
+        <div>
+          <h3 id="brand">
+            <a href="/">Usecase.io</a>
+          </h3>
+
+          <div id="media-icons">
+            <p>IN</p>
+            <p>TW</p>
+            <p>Git</p>
+          </div>
+        </div>
+        <div>
+          <div id="column">
+            <h5 id="title">PRODUCT</h5>
+
+            <a>Resources</a>
+          </div>
+        </div>
+
+        <div>
+          <div id="column">
+            <h5 id="title">ABOUT</h5>
+            <div>
+              <a>Resources</a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div id="column">
+            <h5 id="title">ABOUT</h5>
+            <div>
+              <a>Resources</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="bottom">
+        <p>
+          Copyright @2020 ,
+          All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <footer id="footer" v-if="$mq === 'mobile'">
+      <div id="foot-mobile">
+        <div id="brand-mobile">
+          <h3 id="brand">
+            <a href="/">Usecase.io</a>
+          </h3>
+
+          <div id="media-icons-mobile">
+            <p>IN</p>
+            <p>TW</p>
+            <p>Git</p>
+          </div>
+        </div>
+
+        <div id="mobile-sections">
+          <div id="column">
+            <h5 id="title-mobile">PRODUCT</h5>
+
+            <a>Resources</a>
+          </div>
+
+          <div id="column">
+            <h5 id="title-mobile">ABOUT</h5>
+            <div>
+              <a>Resources</a>
+            </div>
+          </div>
+
+          <div id="column">
+            <h5 id="title-mobile">ABOUT</h5>
+            <div>
               <a>Resources</a>
             </div>
           </div>
@@ -49,7 +154,26 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="postcss" >
+/* duplicate css will be replcaed by media queries later on  */
+#media-icons {
+  font-size: 1.15em;
+  display: flex;
+  justify-content: space-between;
+}
+
+#media-icons-mobile {
+  font-size: 0.9em;
+  display: flex;
+  justify-content: space-around;
+}
+
+#mobile-sections {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
 #footer {
   padding: 0.5em 1em;
   background: #e5e5e5;
@@ -62,8 +186,17 @@ export default {
   flex-direction: row;
 }
 
+#foot-mobile {
+  padding: 0.3em;
+}
+
 #brand {
   margin-top: 20px;
+  font-weight: lighter;
+}
+
+#brand-mobile {
+  text-align: center;
 }
 
 #bottom {
@@ -86,6 +219,13 @@ export default {
 
 #title {
   padding-bottom: 10px;
+  font-weight: bold;
+}
+
+#title-mobile {
+  padding-bottom: 5px;
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
 button {
@@ -102,6 +242,6 @@ p {
 }
 
 a {
-  color: #42b983;
+  color: chocolate;
 }
 </style>

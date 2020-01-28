@@ -17,7 +17,7 @@ Vue.use(VueMq, {
   breakpoints: {
     mobile: 450,
     tablet: 1100,
-    laptop: 1300,
+    laptop: 1700,
     desktop: Infinity
   }
 });
@@ -33,6 +33,10 @@ export default class App extends Vue {}
 </script>
 
 <style  lang="postcss" >
+#flex {
+  display: flex;
+}
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -46,7 +50,7 @@ p {
   }
 
   @media (max-width: 900px;) {
-    font-size: 1.3em;
+    font-size: 1.4em;
   }
 
   @media (max-width: 1200px;) {

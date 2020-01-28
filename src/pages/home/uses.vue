@@ -19,7 +19,7 @@ export default {
 </script>
 
 
-<style scoped>
+<style scoped lang="postcss" >
 #body {
   padding: 0.5em;
   text-align: center;

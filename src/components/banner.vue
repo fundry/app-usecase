@@ -6,15 +6,45 @@
       <div id="cover" v-if="$mq === 'tablet'">
         <img src="../assets/svg/cover.svg" alt="illustration" class="img" :class="$mq" />
       </div>
-      <div id="cover" v-else-if="$mq === 'laptop'">
-        <img src="../assets/svg/cover.svg" alt="illustration" class="img" :class="$mq" />
-      </div>
-      <h1>A Collection of your Ations</h1>
 
-      <p>
-        Make choices based on recent choices made by others and see how it fits
-        your usecase.
-      </p>
+      <div id="cover" v-else-if="$mq === 'laptop'">
+        <br />
+        <div id="flex">
+          <br />
+          <img src="../assets/svg/cover.svg" alt="illustration" class="img" :class="$mq" />
+
+          <div>
+            <br />
+            <br />
+            <br />
+            <h1>A Collection of your Actions</h1>
+
+            <p>
+              Make choices based on recent choices made by others and see how it fits
+              your usecase.
+            </p>
+          </div>
+        </div>
+        <br />
+      </div>
+
+      <div v-if="$mq === 'tablet'">
+        <h1>A Collection of your Actions</h1>
+
+        <p>
+          Make choices based on recent choices made by others and see how it fits
+          your usecase.
+        </p>
+      </div>
+
+      <div v-else-if=" $mq === 'mobile' ">
+        <h1>A Collection of your Actions</h1>
+
+        <p>
+          Make choices based on recent choices made by others and see how it fits
+          your usecase.
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -33,6 +63,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="postcss">
+#flex {
+  display: flex;
+}
+
 .img {
   max-width: 35em;
   height: auto;
