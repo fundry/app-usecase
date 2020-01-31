@@ -15,7 +15,7 @@
 
         <p id="desc">
           You're yet to create a case.
-          <br />Usecase are contained within single cases.
+          <br />Usecase are contained within a single cases.
         </p>
         <button id="create">Create Case</button>
       </div>
