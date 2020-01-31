@@ -2,7 +2,7 @@
   <div>
     <div id="create">
       <p>Recently made a hard choice ?</p>
-      <button>Create A UseCase</button>
+      <button>Document With UseCase</button>
     </div>
 
     <footer id="footer" v-if="$mq === 'laptop'">
@@ -233,12 +233,12 @@ button {
   color: black;
   border: 1px solid black;
   padding: 0.1em 1.3em;
-  border-radius: 7px;
+  border-radius: 5px;
 }
 
 p {
   font-weight: lighter;
-  font-size: 1.3em;
+  font-size: 1.25em;
 }
 
 a {

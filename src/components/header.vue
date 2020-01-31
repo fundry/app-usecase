@@ -71,6 +71,7 @@ input[type="text"] {
 button {
   background: transparent;
   color: black;
+  outline: 0px;
   border: 1px solid black;
   padding: 0.4em 1.1em;
   border-radius: 5px;

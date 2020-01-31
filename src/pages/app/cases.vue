@@ -7,15 +7,16 @@
     <hr />
 
     <div id="body">
-      <h1>
-        Welcome
-        <b>Nwani Victory</b>
-      </h1>
-      <p id="desc">
-        You're yet to create a case.
-        <br />Usecase are contained within single cases.
-      </p>
-      <div>
+      <div v-if="hasCase === true">
+        <h1>
+          Welcome
+          <b>Nwani Victory</b>
+        </h1>
+
+        <p id="desc">
+          You're yet to create a case.
+          <br />Usecase are contained within single cases.
+        </p>
         <button id="create">Create Case</button>
       </div>
     </div>
@@ -28,7 +29,7 @@ import { Component, Vue } from "vue-property-decorator";
 export default {
   name: "Cases",
   data: () => {
-    // hasCase: false;
+    return { hasCase: true };
   }
 };
 </script>
@@ -52,8 +53,9 @@ h5 {
 }
 
 button {
-  padding: 0.7em 2em;
+  padding: 0.5em 1.8em;
   background: transparent;
+  outline: 0px;
   color: black;
   border-radius: 5px;
   border: 1.3px solid black;

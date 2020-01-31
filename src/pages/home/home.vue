@@ -8,6 +8,8 @@
 
     <div>
       <Uses />
+      <Record />
+
       <Recent />
 
       <Document />
@@ -21,12 +23,14 @@ import Recent from "./recent";
 import Uses from "./uses";
 import Document from "./document";
 import Publish from "./publish";
+import Record from "./record";
 
 export default {
   name: "Home",
 
   components: {
     Recent,
+    Record,
     Publish,
     Document,
     Uses
@@ -42,7 +46,7 @@ export default {
 #desc {
   padding: 1em;
   text-align: center;
-  font-size: 1.57em;
+  font-size: 1.4em;
 }
 
 a {
