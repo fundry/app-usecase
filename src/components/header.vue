@@ -1,61 +1,80 @@
 <template>
   <div class="body" id="contain">
-    <div id="flex">
-      <h3 id="title">Usecase</h3>
+    <h3 id="title">Usecase</h3>
 
-      <div id="input-box" v-if="$mq === 'laptop'">
-        <input type="text" placeholder="Search Case" />
+    <ul>
+      <div v-if="$mq === 'laptop'" id="flex">
+        <router-link to="/create" id="link">Cases</router-link>
+
+        <div id="input-box">
+          <BIconSearch id="icon" />
+          <input id="input" placeholder="Search Usecase" type="text" />
+        </div>
       </div>
-    </div>
 
-    <ul v-if="$mq === 'tablet'">
-      <router-link to="/create" id="link">Cases</router-link>
-      <router-link to="/login" id="link">Login</router-link>
+      <div v-if="$mq === 'tablet'" id="flex">
+        <router-link to="/create" id="link">Cases</router-link>
 
-      <button v-on="hi">Create Account</button>
+        <div id="input-box">
+          <BIconSearch id="icon" />
+          <input id="input" placeholder="Search Usecase" type="text" />
+        </div>
+      </div>
+
+      <div v-if="$mq === 'mobile'">
+        <BIconSearch id="icon" />
+        <BIconPerson id="icon" />
+      </div>
     </ul>
-
-    <ul v-if="$mq === 'laptop'">
-      <router-link to="/create" id="link">Cases</router-link>
-      <router-link to="/login" id="link">Login</router-link>
-
-      <button v-on="hi">Create Account</button>
-    </ul>
-
-    <div v-if="$mq === 'mobile'">
-      <p>Menu</p>
-    </div>
   </div>
 </template>
 
 <script lang="ts" >
 import Vue from "vue";
+import { BIconSearch, BIconPerson, BIconList } from "bootstrap-vue";
 
 export default {
-  name: "Header"
+  name: "Header",
+  components: {
+    BIconSearch,
+    BIconPerson
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-input[type="text"] {
+.body {
+  margin-bottom: 15px;
+}
+
+#input[type="text"] {
   padding: 0.3em;
   border: none;
   background: transparent;
   height: 40px;
   outline: 0px;
+  font-size: 1.1em;
   width: 22em;
   border-radius: 0px;
-  padding-left: 15px;
+  padding-left: 7px;
+}
+
+#icon {
+  font-size: 2.1em;
+  padding-top: 7px;
 }
 
 #input-box {
   margin-left: 30px;
+  margin-right: 15px;
   border-radius: 5px;
   padding: 0.2em;
+  padding-left: 20px;
   width: 27em;
-  height: 44px;
-  box-shadow: 0px 3px 5px grey;
+  display: flex;
+  height: 50px;
+  box-shadow: 0px 2px 3.5px grey;
 }
 
 #contain {

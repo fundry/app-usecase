@@ -5,13 +5,12 @@ import VueApollo from 'vue-apollo';
 import App from './App.vue';
 import apolloClient from './data/config';
 import {
-  Home,
   Login,
   CreateCase,
   CreateUsecase,
-  App as Console,
   Signup,
   Import,
+  Profile,
 } from './pages/';
 
 import store from './state/';
@@ -21,7 +20,7 @@ Vue.config.productionTip = false;
 
 const router = new VueRouter({
   routes: [
-    { path: '/', component: Home, name: 'Home' },
+    { path: '/', component: App, name: 'Home' },
     { path: '/login', component: Login, name: 'Login' },
     { path: '/create-case', component: CreateCase, name: 'Create Case' },
     {
@@ -31,6 +30,7 @@ const router = new VueRouter({
     },
     { path: '/signup', component: Signup, name: 'Signup' },
     { path: '/import', component: Import, name: 'Import' },
+    { path: '/profile', component: Profile, name: 'Profile' },
   ],
 });
 
@@ -45,5 +45,5 @@ new Vue({
   router,
   apolloProvider,
   // router,
-  render: (h) => h(Console),
+  render: (h) => h(App),
 }).$mount('#app');

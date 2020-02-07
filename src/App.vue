@@ -1,21 +1,24 @@
 <template>
   <div id="app">
-    <Banner />
-    <Home />
-    <br />
-    <Footer />
+    <Header />
+
+    <div id="contain">
+      <Case />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { Banner, Footer } from "./components/";
-import { Home } from "./pages/";
+import { Header } from "./components/";
+
+import Case from "./pages/app/cases.vue";
+
 import VueMq from "vue-mq";
 
 Vue.use(VueMq, {
   breakpoints: {
-    mobile: 450,
+    mobile: 550,
     tablet: 1100,
     laptop: 1700,
     desktop: Infinity
@@ -24,9 +27,8 @@ Vue.use(VueMq, {
 
 @Component({
   components: {
-    Banner,
-    Home,
-    Footer
+    Header,
+    Case
   }
 })
 export default class App extends Vue {}
