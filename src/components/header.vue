@@ -1,5 +1,5 @@
 <template>
-  <div class="body" id="contain">
+  <div id="contain">
     <h3 id="title">Usecase</h3>
 
     <ul>
@@ -32,22 +32,23 @@
 <script lang="ts" >
 import Vue from "vue";
 import { BIconSearch, BIconPerson, BIconList } from "bootstrap-vue";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "Header",
   components: {
     BIconSearch,
     BIconPerson
+  },
+  computed: mapGetters([""]),
+  methods: {
+    ...mapActions([""])
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.body {
-  margin-bottom: 15px;
-}
-
 #input[type="text"] {
   padding: 0.3em;
   border: none;
@@ -74,7 +75,7 @@ export default {
   width: 27em;
   display: flex;
   height: 50px;
-  box-shadow: 0px 2px 3.5px grey;
+  box-shadow: 0px 1px 4px grey;
 }
 
 #contain {
@@ -84,7 +85,8 @@ export default {
   justify-content: space-between;
   padding: 0.2em 1em;
   padding-top: 10px;
-  box-shadow: 0px 3px 5px grey;
+  margin-bottom: 10px;
+  box-shadow: 0px 1.5px 2px grey;
 }
 
 button {

@@ -6,7 +6,11 @@ const getters = {
   auth: (state: any) => state.authenticated,
 };
 
-const actions: any = {};
+const actions: any = {
+  authUser() {
+    this.authenticated = true;
+  },
+};
 
 const mutations: any = {};
 
