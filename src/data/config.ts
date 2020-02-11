@@ -1,11 +1,11 @@
 import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { onError } from 'apollo-link-error';
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 
 import { ApolloLink, HttpLink } from 'apollo-boost';
 
-dotenv.config()  // ------------> having issues with using vue default way of loading envs
+dotenv.config(); // ------------> having issues with using vue default way of loading envs
 
 // from d vue-apollo docs ===============>>
 // const httpLink = createHttpLink({
@@ -34,7 +34,7 @@ const apolloClient = new ApolloClient({
       if (networkError) console.log(`[Network error]: ${networkError}`);
     }),
     new HttpLink({
-      uri: ENDPOINT,
+      uri: 'http://127.0.0.1:8080/v1/graphql',
     }),
   ]),
   cache: new InMemoryCache(),

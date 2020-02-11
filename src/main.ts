@@ -45,5 +45,5 @@ new Vue({
   router,
   apolloProvider,
   // router,
-  render: (h) => h(CreateCase),
+  render: (h) => h(App),
 }).$mount('#app');

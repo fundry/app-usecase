@@ -45,7 +45,7 @@ import { BCard } from "bootstrap-vue";
 import { Header } from "../../../components";
 
 @Component({
-  name: "Create case",
+  name: "Create",
   components: { Header, BCard }
 })
 export default class App extends Vue {}

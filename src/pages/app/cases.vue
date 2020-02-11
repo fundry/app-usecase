@@ -12,7 +12,7 @@
           Welcome
           <b>Nwani Victory</b>
         </h1>
-
+        <p v-for="U in Users" v-bind:key="U.id">{{U.name}} name</p>
         <p id="desc">
           You're yet to create a case.
           <br />Usecase are contained within a single cases.
@@ -25,11 +25,25 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import { gql } from "apollo-boost";
 
+new Vue({
+  apollo: {}
+});
 export default {
   name: "Cases",
   data: () => {
-    return { hasCase: true };
+    return { Users: {}, hasCase: true };
+  },
+  apollo: {
+    Users: gql`
+      query {
+        Users {
+          name
+        }
+      }
+    `,
+    update: data => console.log(data)
   }
 };
 </script>
