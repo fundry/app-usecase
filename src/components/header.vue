@@ -47,7 +47,6 @@ import {
 import { mapGetters, mapActions } from "vuex";
 
 const t = false;
-console.log(t, "aa");
 export default {
   name: "Header",
   components: {
@@ -55,9 +54,9 @@ export default {
     BIconPerson,
     BIconThreeDotsVertical
   },
-  computed: mapGetters([""]),
+  computed: mapGetters(["auth"]),
   methods: {
-    ...mapActions([""])
+    ...mapActions(["authUser"])
   },
   props: ["CaseName"]
 };
@@ -78,7 +77,7 @@ export default {
 }
 
 #icon {
-  font-size: 2.1em;
+  font-size: 2.5rem;
   padding-top: 7px;
 }
 

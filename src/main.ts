@@ -37,6 +37,6 @@ new Vue({
   store,
   AppRouter,
   apolloProvider,
-  // router,
-  render: h => h(Edit)
+
+  render: h => h(App)
 }).$mount("#app");

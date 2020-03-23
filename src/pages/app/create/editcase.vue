@@ -16,16 +16,26 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Vue } from "vue-property-decorator";
 import { BIconStar, BIconX } from "bootstrap-vue";
-import Outline from "./outline";
+import { mapActions, mapGetters } from "vuex";
 
+import Outline from "./outline";
 import { Header } from "../../../components";
 
-@Component({
-  components: { Header, Outline, BIconStar, BIconX }
-})
-export default class App extends Vue {}
+export default {
+  name: "",
+  components: {
+    Header,
+    // Outline,
+    BIconStar,
+    BIconX
+  },
+  computed: mapGetters(["Case"]),
+  methods: {
+    ...mapActions(["editCase"])
+  }
+};
 </script>
 
 <style scoped>

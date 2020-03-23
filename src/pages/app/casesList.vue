@@ -13,6 +13,7 @@
           <b>Nwani Victory</b>
         </h1>
         <p v-for="U in Users" v-bind:key="U.id">{{ U.name }}</p>
+
         <p id="desc">
           You're yet to create a case.
           <br />Usecase are contained within a single cases.
@@ -22,20 +23,43 @@
         </nuxt-link>
       </div>
     </div>
+
+    <ul v-for="g in get_case" v-bind:key="g.id">
+      <div id="li-container">
+        <div>
+          <img alt="Case cover" src="" />
+          <p>
+            <a href=""> {{ g.author }} </a>
+          </p>
+        </div>
+        <h4 id="title">
+          <a href="/">{{ g.title }} </a>
+        </h4>
+
+        <BIconThreeDotsVertical id="icon" />
+      </div>
+    </ul>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { gql } from "apollo-boost";
+import { mapActions, mapGetters } from "vuex";
+import { BIconThreeDotsVertical } from "bootstrap-vue";
 
 new Vue({
   apollo: {}
 });
 export default {
   name: "Cases",
+  components: {
+    BIconThreeDotsVertical
+  },
+
+  // graphql data. would be put in separate file later
   data: () => {
-    return { Users: {}, hasCase: true };
+    return { Users: {}, hasCase: false };
   },
   apollo: {
     Users: gql`
@@ -46,11 +70,34 @@ export default {
       }
     `,
     update: data => console.log(data)
+  },
+
+  // vuex
+  computed: mapGetters(["get_case"]),
+  methods: {
+    ...mapActions(["deleteCase"])
   }
 };
 </script>
 
 <style scoped>
+#icon {
+  cursor: pointer;
+  font-size: 2.1rem;
+  padding-top: 3px;
+}
+
+#title {
+  font-weight: normal;
+}
+
+#li-container {
+  display: flex;
+  padding: 0.5em;
+  margin: 0.5em;
+  justify-content: space-between;
+}
+
 #top {
   display: flex;
   justify-content: space-between;

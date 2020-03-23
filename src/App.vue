@@ -12,7 +12,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import { Header } from "./components/";
 
-import Case from "./pages/app/cases.vue";
+import Case from "./pages/app/casesList.vue";
 
 import VueMq from "vue-mq";
 
@@ -34,7 +34,7 @@ Vue.use(VueMq, {
 export default class App extends Vue {}
 </script>
 
-<style  lang="postcss" >
+<style lang="postcss">
 #flex {
   display: flex;
 }
