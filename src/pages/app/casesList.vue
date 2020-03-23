@@ -1,5 +1,11 @@
 <template>
   <div>
+    <BModal v-model="showModal">
+      <p>testing modal</p>
+    </BModal>
+
+    <CreateUsecaseModal />
+
     <div id="body">
       <div v-if="hasCase === true">
         <h1>
@@ -45,7 +51,7 @@
       <div id="usecase-list">
         <p id="label">UseCases</p>
 
-        <button>Create Usecase</button>
+        <button @click="showModal = !showModal">Create Usecase</button>
       </div>
       <ul v-for="g in get_case" v-bind:key="g.id">
         <div id="li-container">
@@ -70,7 +76,9 @@
 import { Component, Vue } from "vue-property-decorator";
 import { gql } from "apollo-boost";
 import { mapActions, mapGetters } from "vuex";
-import { BIconThreeDotsVertical, BIconPlus } from "bootstrap-vue";
+import { BModal, BIconThreeDotsVertical, BIconPlus } from "bootstrap-vue";
+
+import { CreateUsecaseModal } from "../../components/modals/";
 
 new Vue({
   apollo: {}
@@ -79,13 +87,15 @@ export default {
   name: "Cases",
   components: {
     BIconThreeDotsVertical,
-    BIconPlus
+    BIconPlus,
+    BModal
+  },
+
+  data: () => {
+    return { hasCase: false, showModal: false };
   },
 
   // graphql data. would be put in separate file later
-  data: () => {
-    return { Users: {}, hasCase: false };
-  },
   apollo: {
     Users: gql`
       query {
@@ -125,6 +135,7 @@ export default {
   border-radius: 30px;
   font-size: 1.2em;
   height: 5.5vh;
+  cursor: pointer;
   border: 1px solid #000;
   text-align: center;
 }
@@ -171,12 +182,13 @@ h5 {
 }
 
 button {
-  padding: 0.5em 1.8em;
+  margin-right: 20px;
+  padding: 0.1em 1.2em;
   background: transparent;
   outline: 0px;
   color: black;
   border-radius: 5px;
-  border: 1.3px solid black;
+  border: 1px solid black;
 }
 
 #app {
