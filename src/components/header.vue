@@ -29,7 +29,7 @@
       </div>
     </ul>
 
-    <ul>
+    <ul v-if="auth == true">
       <BIconThreeDotsVertical id="icon" />
       <BIconPerson id="icon" />
     </ul>
