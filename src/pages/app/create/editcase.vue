@@ -1,39 +1,54 @@
 <template>
   <div>
-    <Header />
-    <br />
-    <div id="body">
-      <input id="usecase" type="text" placeholder="What's your Usecase" />
+    <Header case="" screen="edit" />
+    <div id="alert">
+      <BIconStar id="icon" />
+      <p>Double tap any text to edit or continue draft!</p>
+      <BIconX id="icon" />
+    </div>
 
-      <br />
+    <div id="body">
+      <h3>Migrating From Hasura To Google Cloud Platform</h3>
       <br />
       <input type="text" placeholder="Description" />
-
-      <div id="tags">
-        <p>Tags</p>
-      </div>
-
-      <div id="btn-contain">
-        <br />
-        <button>Create Usecase</button>
-      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import { BIconStar, BIconX } from "bootstrap-vue";
+import Outline from "./outline";
+
 import { Header } from "../../../components";
 
 @Component({
-  components: { Header }
+  components: { Header, Outline, BIconStar, BIconX }
 })
 export default class App extends Vue {}
 </script>
 
 <style scoped>
+#alert {
+  padding: 0.3em;
+  text-align: center;
+  font-size: 1.2em;
+  display: flex;
+}
+
+#icon {
+  margin-left: 2rem;
+  margin-right: 0.5rem;
+  font-size: 1.5em;
+}
+
 #body {
   padding: 1em;
+}
+
+h3 {
+  text-align: center;
+  font-weight: normal;
 }
 
 #form-contain {
@@ -62,21 +77,10 @@ button {
   text-align: center;
 }
 
-#tags {
-  margin: 20px;
-  height: 15vh;
-  border: 3px dashed grey;
-  padding: 15px;
-  border-radius: 3px;
-}
-
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-}
-#contain {
-  display: flex;
 }
 </style>

@@ -12,12 +12,14 @@
           Welcome
           <b>Nwani Victory</b>
         </h1>
-        <p v-for="U in Users" v-bind:key="U.id">{{U.name}} name</p>
+        <p v-for="U in Users" v-bind:key="U.id">{{ U.name }}</p>
         <p id="desc">
           You're yet to create a case.
           <br />Usecase are contained within a single cases.
         </p>
-        <button id="create">Create Case</button>
+        <nuxt-link to="/app/create/case">
+          <button id="create">Create Case</button>
+        </nuxt-link>
       </div>
     </div>
   </div>

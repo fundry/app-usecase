@@ -2,10 +2,12 @@
   <div id="contain">
     <h3 id="title">Usecase</h3>
 
-    <ul>
+    <div>
+      <h5>{{ CaseName }}</h5>
+    </div>
+    <ul v-if="$t == true">
       <div v-if="$mq === 'laptop'" id="flex">
         <router-link to="/create" id="link">Cases</router-link>
-
         <div id="input-box">
           <BIconSearch id="icon" />
           <input id="input" placeholder="Search Usecase" type="text" />
@@ -26,24 +28,38 @@
         <BIconPerson id="icon" />
       </div>
     </ul>
+
+    <ul>
+      <BIconThreeDotsVertical id="icon" />
+      <BIconPerson id="icon" />
+    </ul>
   </div>
 </template>
 
-<script lang="ts" >
+<script lang="ts">
 import Vue from "vue";
-import { BIconSearch, BIconPerson, BIconList } from "bootstrap-vue";
+import {
+  BIconSearch,
+  BIconPerson,
+  BIconList,
+  BIconThreeDotsVertical
+} from "bootstrap-vue";
 import { mapGetters, mapActions } from "vuex";
 
+const t = false;
+console.log(t, "aa");
 export default {
   name: "Header",
   components: {
     BIconSearch,
-    BIconPerson
+    BIconPerson,
+    BIconThreeDotsVertical
   },
   computed: mapGetters([""]),
   methods: {
     ...mapActions([""])
-  }
+  },
+  props: ["CaseName"]
 };
 </script>
 
