@@ -1,7 +1,15 @@
 <template>
   <div>
     <BModal v-model="showModal">
-      <p>testing modal</p>
+      <div id="input-box">
+        <BIconFolder id="icon" />
+        <input type="text" id="case-inpt" placeholder="Case name" />
+      </div>
+
+      <br />
+      <div id="center">
+        <button id="create">Create Case</button>
+      </div>
     </BModal>
 
     <CreateUsecaseModal />
@@ -28,21 +36,11 @@
       <div id="usecase-list">
         <p id="label">Cases</p>
 
-        <div id="flex">
-          <div id="usecase-container">
-            Jest
-          </div>
-
-          <div id="usecase-container">
-            Pytorch
-          </div>
-
-          <div id="usecase-container">
-            DevC
-          </div>
+        <div id="flex" v-for="C in Cases" v-bind:key="C.id">
+          <div id="usecase-container">{{ C.name }}</div>
         </div>
 
-        <div>
+        <div @click="showModal = !showModal">
           <BIconPlus id="lg-icon" />
         </div>
       </div>
@@ -53,16 +51,16 @@
 
         <button @click="showModal = !showModal">Create Usecase</button>
       </div>
-      <ul v-for="g in get_case" v-bind:key="g.id">
+      <ul v-for="U in Usecases" v-bind:key="U.id">
         <div id="li-container">
           <div>
-            <img alt="Case cover" src="" />
+            <img alt="Case cover" src />
             <p>
-              <a href=""> {{ g.author }} </a>
+              <a href>{{ U.author }}</a>
             </p>
           </div>
           <h4 id="title">
-            <a href="/">{{ g.title }} </a>
+            <a href="/">{{ U.title }}</a>
           </h4>
 
           <BIconThreeDotsVertical id="icon" />
@@ -76,18 +74,26 @@
 import { Component, Vue } from "vue-property-decorator";
 import { gql } from "apollo-boost";
 import { mapActions, mapGetters } from "vuex";
-import { BModal, BIconThreeDotsVertical, BIconPlus } from "bootstrap-vue";
+import {
+  BModal,
+  BIconThreeDotsVertical,
+  BIconPlus,
+  BIconFolder
+} from "bootstrap-vue";
 
+import { UseCase, Cases } from "../../data/queries";
 import { CreateUsecaseModal } from "../../components/modals/";
 
 new Vue({
   apollo: {}
 });
+
 export default {
   name: "Cases",
   components: {
     BIconThreeDotsVertical,
     BIconPlus,
+    BIconFolder,
     BModal
   },
 
@@ -95,15 +101,9 @@ export default {
     return { hasCase: false, showModal: false };
   },
 
-  // graphql data. would be put in separate file later
   apollo: {
-    Users: gql`
-      query {
-        Users {
-          name
-        }
-      }
-    `,
+    Usecases: UseCase,
+    Cases: Cases,
     update: data => console.log(data)
   },
 
@@ -116,6 +116,27 @@ export default {
 </script>
 
 <style scoped>
+#case-inpt {
+  outline: 0px;
+  width: 26rem;
+  padding: 0.5rem 0.7rem;
+  border: 0px;
+}
+
+#center {
+  text-align: center;
+}
+
+#input-box {
+  border-radius: 5px;
+  outline: 0px;
+  width: 28rem;
+  font-size: 1.1rem;
+  display: flex;
+  padding: 0.6rem 1rem;
+  border: 1px solid #000;
+}
+
 #label {
   padding: 10px 20px 5px 10px;
   font-size: 1.3rem;

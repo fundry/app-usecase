@@ -1,24 +1,25 @@
-import { gql } from "apollo-boost";
+import { gql } from 'apollo-boost';
 
-const GET_CASE = gql`
-  {
-    Cases(where: { id: 1 }) {
-      author
-      title
-      created
-    }
-  }
-`;
-
-const ALL_CASES = gql`
-  query GET_CASE {
-    Cases {
+const UseCase = gql`
+  query {
+    Usecases(where: { id: { _eq: 2 } }) {
       id
       author
+      created
       title
+      content
+    }
+  }
+`;
+
+const Cases = gql`
+  query {
+    Cases(where: { author: { _eq: "Nwani Victory" } }) {
+      author
+      name
       created
     }
   }
 `;
 
-export { GET_CASE, ALL_CASES };
+export { UseCase, Cases };
