@@ -2,7 +2,9 @@ import { gql } from 'apollo-boost';
 
 const UseCase = gql`
   query {
-    Usecases(where: { id: { _eq: 2 } }) {
+    Usecases(
+      where: { author: { _eq: "1b519f7e-4909-11ea-b77f-2e728ce88125" } }
+    ) {
       id
       author
       created

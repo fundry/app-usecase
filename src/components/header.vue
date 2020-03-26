@@ -24,7 +24,9 @@
       </div>
 
       <div v-if="$mq === 'mobile'">
-        <BIconSearch id="icon" />
+        <div id="cursor">
+          <BIconSearch id="icon" />
+        </div>
         <BIconPerson id="icon" />
       </div>
     </ul>

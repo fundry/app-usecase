@@ -3,9 +3,9 @@
     <BModal v-model="showModal">
       <div id="input-box">
         <BIconFolder id="icon" />
-        <input type="text" id="case-inpt" placeholder="Case name" />
+        <input v-model="case_val" type="text" id="case-inpt" placeholder="Case name" />
       </div>
-
+      <p>{{case_val}} value</p>
       <br />
       <div id="center">
         <button id="create">Create Case</button>
@@ -82,6 +82,7 @@ import {
 } from "bootstrap-vue";
 
 import { UseCase, Cases } from "../../data/queries";
+import { Create_UseCase, CREATE_CASE } from "../../data/mutations";
 import { CreateUsecaseModal } from "../../components/modals/";
 
 new Vue({
