@@ -1,10 +1,7 @@
 <template>
   <div id="app">
     <Header />
-
-    <div id="contain">
-      <Case />
-    </div>
+<Case />
   </div>
 </template>
 

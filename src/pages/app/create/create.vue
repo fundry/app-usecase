@@ -60,7 +60,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import { BCard } from "bootstrap-vue";
 
-import { Header } from "../../../components";
+import { Header } from "../../../components/";
 
 @Component({
   components: { Header, BCard },

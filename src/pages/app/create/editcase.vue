@@ -21,7 +21,7 @@ import { BIconStar, BIconX } from "bootstrap-vue";
 import { mapActions, mapGetters } from "vuex";
 
 import Outline from "./outline";
-import { Header } from "../../../components";
+import { Header } from "../../../components/";
 
 export default {
   name: "",

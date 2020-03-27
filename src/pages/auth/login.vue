@@ -23,7 +23,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { Header } from "../../components";
+import { Header } from "../../components/";
 
 @Component({
   components: {

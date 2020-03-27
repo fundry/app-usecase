@@ -83,7 +83,7 @@ import {
 
 import { UseCase, Cases } from "../../data/queries";
 import { Create_UseCase, CREATE_CASE } from "../../data/mutations";
-import { CreateUsecaseModal } from "../../components/modals/";
+import { CreateUsecaseModal } from "../../components//modals/";
 
 new Vue({
   apollo: {}
