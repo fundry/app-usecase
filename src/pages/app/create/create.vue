@@ -63,7 +63,6 @@ import { BCard } from "bootstrap-vue";
 import { Header } from "../../../components";
 
 @Component({
-  name: "Create",
   components: { Header, BCard },
   state: {
     selected: false

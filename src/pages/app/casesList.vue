@@ -70,7 +70,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { Component, Vue } from "vue-property-decorator";
 import { gql } from "apollo-boost";
 import { mapActions, mapGetters } from "vuex";
