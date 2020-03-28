@@ -1,7 +1,8 @@
 <template>
   <div id="contain">
-    <h3 id="title">Usecase</h3>
-
+    <router-link to="/">
+      <h3 id="title">Usecase</h3>
+    </router-link>
     <div>
       <h5>{{ CaseName }}</h5>
     </div>
@@ -33,7 +34,10 @@
 
     <ul v-if="auth == true">
       <BIconThreeDotsVertical id="icon" />
-      <BIconPerson id="icon" />
+
+      <router-link to="/profile" id="link">
+        <BIconPerson id="icon" />
+      </router-link>
     </ul>
   </div>
 </template>

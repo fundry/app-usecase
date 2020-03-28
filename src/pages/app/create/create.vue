@@ -1,7 +1,5 @@
 <template>
   <div>
-    <Header :case-name="Case" />
-
     <div id="body">
       <div>
         <br />
@@ -10,34 +8,38 @@
         <p id="question">How would you like to do that?</p>
         <p></p>
 
-        <div id="flex">
+        <div id="flex" v-if="selected !== true">
           <BCard id="card">
             <h4>A Usecase</h4>
             <p>
-              Create a single case <br />
+              Create a single case
               <br />
-              This could be a new technology you tried out and your review
+              <br />This could be a new technology you tried out and your review
             </p>
 
-            <a href="/"> Learn More </a>
+            <div id="more">
+              <a href="/"> Learn More <BIconArrowRight id="icon-learn" /> </a>
+            </div>
           </BCard>
 
-          <BCard id="card">
+          <BCard id="card" @click="selected = true">
             <h4>An Entire Case</h4>
             <p>
-              Create a virtual folder for your usecases. <br />
+              Create a virtual folder for your usecases.
               <br />
-              A case could be a project with usecases as actions taken within
-              the project
+              <br />A case could be a project with usecases as actions taken
+              within the project
             </p>
-            <a href="/"> Learn More </a>
+            <div id="more">
+              <a href="/"> Learn More <BIconArrowRight id="icon-learn" /> </a>
+            </div>
           </BCard>
         </div>
       </div>
 
       <br />
       <br />
-      <BCard>
+      <BCard v-if="selected === true">
         <div id="flex">
           <p id="input-value">Name</p>
 
@@ -48,30 +50,39 @@
             placeholder="Case Name"
           />
         </div>
-        <div>
+        <router-link to="/">
           <p id="link">Continue</p>
-        </div>
+        </router-link>
       </BCard>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { BCard } from "bootstrap-vue";
+<script>
+import Vue from "vue";
+import { BCard, BIconArrowRight } from "bootstrap-vue";
 
-import { Header } from "../../../components/";
+export default {
+  name: "Create",
+  components: {
+    BCard,
+    BIconArrowRight
+  },
 
-@Component({
-  components: { Header, BCard },
-  state: {
-    selected: false
+  data: () => {
+    return { case: false, selected: false };
   }
-})
-export default class App extends Vue {}
+};
 </script>
 
 <style scoped>
+#more {
+  text-align: center;
+  .icon-learn {
+    font-size: 2em;
+  }
+}
+
 #link {
   margin: 1em;
   padding-right: 10px;

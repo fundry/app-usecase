@@ -49,7 +49,9 @@
       <div id="usecase-list">
         <p id="label">UseCases</p>
 
-        <button @click="showModal = !showModal">Create Usecase</button>
+        <button>
+          <router-link to="/create-case">Create Usecase</router-link>
+        </button>
       </div>
       <ul v-for="U in Usecases" v-bind:key="U.id">
         <div id="li-container">

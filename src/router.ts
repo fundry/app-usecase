@@ -1,16 +1,22 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import App from './App.vue';
-import { Login, CreateCase, Edit, Signup, Import, Profile } from './pages/';
-import Case from "./pages/app/casesList.vue";
+import {
+    Login,
+    CreateCase,
+    Edit,
+    Signup,
+    Import,
+    Profile,
+    Cases,
+} from './pages/';
 
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-    mode: "hash",
+    mode: 'hash',
     routes: [
-        { path: '/', component: Case, name: 'Case' },
+        { path: '/', component: Cases, name: 'Case' },
         { path: '/login', component: Login, name: 'Login' },
         { path: '/create-case', component: CreateCase, name: 'Create Case' },
         {
@@ -24,4 +30,4 @@ const router = new VueRouter({
     ],
 });
 
-export default router
+export default router;
