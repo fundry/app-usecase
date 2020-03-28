@@ -3,22 +3,21 @@ import VueApollo from 'vue-apollo';
 
 import App from './App.vue';
 import apolloClient from './data/config';
-import Router from './router'
+import router from './router'
 
 import store from './state/';
 import './assets/css/variables.css';
 
 Vue.config.productionTip = false;
 
-Vue.use(VueApollo, Router);
+Vue.use(VueApollo);
 
 const apolloProvider = new VueApollo({
   defaultClient: apolloClient,
 });
 
-// TODO: FIX ROUTER
-
 new Vue({
+  router,
   store,
   apolloProvider,
   render: (h) => h(App),

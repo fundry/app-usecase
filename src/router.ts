@@ -1,14 +1,16 @@
 import Vue from 'vue';
-import Router from 'vue-router';
+import VueRouter from 'vue-router';
 
 import App from './App.vue';
 import { Login, CreateCase, Edit, Signup, Import, Profile } from './pages/';
+import Case from "./pages/app/casesList.vue";
 
-Vue.use(Router);
+Vue.use(VueRouter);
 
-export default new Router({
+const router = new VueRouter({
+    mode: "hash",
     routes: [
-        { path: '/', component: App, name: 'Home' },
+        { path: '/', component: Case, name: 'Case' },
         { path: '/login', component: Login, name: 'Login' },
         { path: '/create-case', component: CreateCase, name: 'Create Case' },
         {
@@ -21,3 +23,5 @@ export default new Router({
         { path: '/profile', component: Profile, name: 'Profile' },
     ],
 });
+
+export default router
