@@ -20,7 +20,7 @@ import { Vue } from "vue-property-decorator";
 import { BIconStar, BIconX } from "bootstrap-vue";
 import { mapActions, mapGetters } from "vuex";
 
-import Outline from "./outline";
+import Outline from "./outline.vue";
 import { Header } from "../../../components/";
 
 export default {
