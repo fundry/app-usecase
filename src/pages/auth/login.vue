@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <div id="body">
       <div>
         <input placeholder="Username or email" />
@@ -23,11 +22,9 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { Header } from "../../components/";
 
 @Component({
   components: {
-    Header
   }
 })
 export default class App extends Vue {}

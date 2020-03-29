@@ -1,5 +1,5 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
+import Vue from "vue";
+import VueRouter from "vue-router";
 
 import {
     Login,
@@ -8,26 +8,51 @@ import {
     Signup,
     Import,
     Profile,
-    Cases,
-} from './pages/';
+    Cases
+} from "./pages/";
 
 Vue.use(VueRouter);
 
+const auth = true;
+
 const router = new VueRouter({
-    mode: 'hash',
+    mode: "hash",
     routes: [
-        { path: '/', component: Cases, name: 'Case' },
-        { path: '/login', component: Login, name: 'Login' },
-        { path: '/create-case', component: CreateCase, name: 'Create Case' },
+        { path: "/login", component: Login, name: "Login" },
+        { path: "/signup", component: Signup, name: "Signup" },
+
         {
-            path: '/create-usecase',
-            component: Edit,
-            name: 'Create Usecase',
+            path: "/",
+            component: Cases,
+            name: "Case",
+            redirect: !auth ? "/login" : null
         },
-        { path: '/signup', component: Signup, name: 'Signup' },
-        { path: '/import', component: Import, name: 'Import' },
-        { path: '/profile', component: Profile, name: 'Profile' },
-    ],
+
+        {
+            path: "/create-case",
+            component: CreateCase,
+            name: "Create Case",
+            redirect: !auth ? "/login" : null
+        },
+        {
+            path: "/create-usecase",
+            component: Edit,
+            name: "Create Usecase",
+            redirect: !auth ? "/login" : null
+        },
+        {
+            path: "/import",
+            component: Import,
+            name: "Import",
+            redirect: !auth ? "/login" : null
+        },
+        {
+            path: "/profile",
+            component: Profile,
+            name: "Profile",
+            redirect: !auth ? "/login" : null
+        }
+    ]
 });
 
 export default router;
