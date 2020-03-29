@@ -1,5 +1,5 @@
 <template>
-  <div id="contain">
+  <nav id="contain">
     <router-link to="/">
       <h3 id="title">Usecase</h3>
     </router-link>
@@ -39,7 +39,7 @@
         <BIconPerson id="icon" />
       </router-link>
     </ul>
-  </div>
+  </nav>
 </template>
 
 <script >

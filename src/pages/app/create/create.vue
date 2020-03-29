@@ -1,13 +1,12 @@
 <template>
-  <div>
+  <div onselectstart="return false" >
     <div id="body">
       <div>
         <br />
 
         <p id="question">You want to document an action!</p>
         <p id="question">How would you like to do that?</p>
-        <p></p>
-
+       
         <div id="flex" v-if="selected !== true">
           <BCard id="card">
             <router-link to="/create-usecase">

@@ -1,10 +1,14 @@
 <template>
   <div id="body">
-    <div>
-      <h3>Nwani Victory</h3>
+    <div class="profile">
+      <img alt="user" />
+      <div>
+        <h3>Nwani Victory</h3>
+        <h5>vickywane@gmail.com</h5>
+      </div>
     </div>
 
-    <div class="links">
+    <div class="links" onselectstart="return false">
       <h4>Followed Cases</h4>
       <h4>Followed Usecases</h4>
       <h4>Comments and Replies.</h4>
@@ -46,15 +50,26 @@ h3 {
   }
 
   &:hover {
-    transition: all 250ms ease-in-cubic;
-    background-color: #f6f7fb;
   }
 }
 
-.links {
+.profile {
+  display: flex;
+  padding: 0.7rem 0.5rem;
+  & h5 {
+    font-weight: normal;
+    padding-left: 23px;
+  }
+  & img {
+    padding-top: 15px;
+  }
+}
+
+.links { 
   display: flex;
   justify-content: space-between;
-  & h4 {
+  & h4 { 
+    cursor : pointer;
     font-weight: normal;
     padding: 1rem;
   }

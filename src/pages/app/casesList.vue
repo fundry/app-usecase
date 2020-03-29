@@ -1,20 +1,17 @@
 <template>
-  <div>
-    <BModal v-model="showModal">
-      <div id="input-box">
+  <div onselectstart="return false">
+    <BModal v-model="showModal" class="modal">
+      <div>
         <BIconFolder id="icon" />
-        <input v-model="case_val" type="text" id="case-inpt" placeholder="Case name" />
+        <input v-model="case_val" type="text" placeholder="Case name" />
       </div>
-      <p>{{case_val}} value</p>
       <br />
-      <div id="center">
-        <button id="create">Create Case</button>
-      </div>
+      <button>Create Case</button>
     </BModal>
 
     <CreateUsecaseModal />
 
-    <div id="body">
+    <div class="body">
       <div v-if="hasCase === true">
         <h1>
           Welcome
@@ -22,23 +19,21 @@
         </h1>
         <p v-for="U in Users" v-bind:key="U.id">{{ U.name }}</p>
 
-        <p id="desc">
+        <p>
           You're yet to create a case.
           <br />Usecase are contained within a single cases.
         </p>
         <nuxt-link to="/app/create/case">
-          <button id="create">Create Case</button>
+          <button>Create Case</button>
         </nuxt-link>
       </div>
     </div>
 
-    <div v-if="hasCase === false">
-      <div id="usecase-list">
+    <div v-if="hasCase === false" class>
+      <div class="usecase-list">
         <p id="label">Cases</p>
 
-        <div id="flex" v-for="C in Cases" v-bind:key="C.id">
-          <div id="usecase-container">{{ C.name }}</div>
-        </div>
+        <div v-for="C in Cases" v-bind:key="C.id" id="usecase-container">{{ C.name }}</div>
 
         <div @click="showModal = !showModal">
           <BIconPlus id="lg-icon" />
@@ -46,22 +41,23 @@
       </div>
       <hr />
 
-      <div id="usecase-list">
-        <p id="label">UseCases</p>
+      <div class="usecase-list">
+        <p>UseCases</p>
 
         <button>
           <router-link to="/create">Create Usecase</router-link>
         </button>
       </div>
+
       <ul v-for="U in Usecases" v-bind:key="U.id">
-        <div id="li-container">
+        <div class="li-container">
           <div>
             <img alt="Case cover" src />
             <p>
               <a href>{{ U.author }}</a>
             </p>
           </div>
-          <h4 id="title">
+          <h4>
             <a href="/">{{ U.title }}</a>
           </h4>
 
@@ -118,12 +114,32 @@ export default {
 };
 </script>
 
-<style scoped>
-#case-inpt {
-  outline: 0px;
-  width: 26rem;
-  padding: 0.5rem 0.7rem;
-  border: 0px;
+<style scoped lang="postcss" >
+.modal {
+  padding: 1rem;
+  & div {
+    border-radius: 5px;
+    outline: 0px;
+    width: 28rem;
+    font-size: 1.1rem;
+    display: flex;
+    padding: 0.6rem 1rem;
+    border: 1px solid #000;
+  }
+  & input {
+    outline: 0px;
+    width: 26rem;
+    padding: 0.5rem 0.7rem;
+    border: 0px;
+  }
+  & button {
+    align-items: center;
+    background: transparent;
+    color: black;
+    border: 1px solid black;
+    padding: 0.7rem 5rem;
+    border-radius: 5px;
+  }
 }
 
 #center {
@@ -131,24 +147,16 @@ export default {
 }
 
 #input-box {
-  border-radius: 5px;
-  outline: 0px;
-  width: 28rem;
-  font-size: 1.1rem;
-  display: flex;
-  padding: 0.6rem 1rem;
-  border: 1px solid #000;
 }
 
-#label {
-  padding: 10px 20px 5px 10px;
-  font-size: 1.3rem;
-}
-
-#usecase-list {
+.usecase-list {
   display: flex;
   padding: 0.3em;
   justify-content: space-between;
+  & p {
+    padding: 10px 20px 5px 10px;
+    font-size: 1.3rem;
+  }
 }
 
 #usecase-container {
@@ -175,17 +183,16 @@ export default {
   padding-top: 3px;
 }
 
-#title {
-  padding-top: 5px;
-  font-weight: normal;
-  font-size: 1.4rem;
-}
-
-#li-container {
+.li-container {
   display: flex;
   padding: 0.5em;
   margin: 0.5em;
   justify-content: space-between;
+  & h4 {
+    padding-top: 5px;
+    font-weight: normal;
+    font-size: 1.4rem;
+  }
 }
 
 #top {
@@ -194,17 +201,27 @@ export default {
   padding: 0.5em 2em;
 }
 
-#body {
+.body {
+  display: flex;
+  align-content: center;
+  justify-content: center;
   text-align: center;
   margin: 3em;
+  & p {
+    font-size: 1.3em;
+  }
+  & button {
+    background: transparent;
+    color: black;
+    border: 1px solid black;
+    padding: 0.7rem 7rem;
+    border-radius: 5px;
+  }
 }
+
 h5 {
   padding-top: 10px;
 }
-#desc {
-  font-size: 1.4em;
-}
-
 button {
   margin-right: 20px;
   padding: 0.1em 1.2em;
@@ -220,16 +237,5 @@ button {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-}
-#contain {
-  display: flex;
-}
-
-#create {
-  background: transparent;
-  color: black;
-  border: 1px solid black;
-  padding: 0.7em 7em;
-  border-radius: 5px;
 }
 </style>
