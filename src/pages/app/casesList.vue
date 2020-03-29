@@ -50,7 +50,7 @@
         <p id="label">UseCases</p>
 
         <button>
-          <router-link to="/create-case">Create Usecase</router-link>
+          <router-link to="/create">Create Usecase</router-link>
         </button>
       </div>
       <ul v-for="U in Usecases" v-bind:key="U.id">

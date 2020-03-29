@@ -10,9 +10,11 @@
 
         <div id="flex" v-if="selected !== true">
           <BCard id="card">
-            <h4>A Usecase</h4>
+            <router-link to="/create-usecase">
+              <h4>A Usecase</h4>
+            </router-link>
             <p>
-              Create a single case
+              Create a single usecase
               <br />
               <br />This could be a new technology you tried out and your review
             </p>

@@ -29,9 +29,9 @@ const router = new VueRouter({
         },
 
         {
-            path: "/create-case",
+            path: "/create",
             component: CreateCase,
-            name: "Create Case",
+            name: "Create",
             redirect: !auth ? "/login" : null
         },
         {
