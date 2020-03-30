@@ -7,7 +7,6 @@
         <router-link to="/create">Create Usecase</router-link>
       </button>
     </div>
-    <p>{{usecase}}</p>
 
     <ul v-for="u in usecase" v-bind:key="u.id">
       <div class="li-container">

@@ -9,7 +9,7 @@ import {
     Import,
     Profile,
     Case,
-    List
+    List, Explore
 } from "./pages/";
 
 Vue.use(VueRouter);
@@ -21,6 +21,12 @@ const router = new VueRouter({
     routes: [
         { path: "/login", component: Login, name: "Login" },
         { path: "/signup", component: Signup, name: "Signup" },
+        {
+            path: "/explore",
+            component: Explore,
+            name: "Explore",
+            redirect: !auth ? "/login" : null
+        },
 
         {
             path: "/",

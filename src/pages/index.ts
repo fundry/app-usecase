@@ -6,3 +6,4 @@ export { default as List } from "./app/List.vue";
 export { default as Case } from "./app/case.vue";
 export { default as Import } from "./app/create/import.vue";
 export { default as Profile } from "./user/profile.vue";
+export { default as Explore } from "./explore.vue";
