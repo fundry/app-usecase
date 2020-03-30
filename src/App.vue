@@ -1,18 +1,16 @@
 <template>
-<v-app>
-  <div id="app">
-    <Header />
+  <v-app>
+    <div id="app">
+      <Header />
 
-      <router-view>  </router-view> 
-  </div>
+      <router-view></router-view>
+    </div>
   </v-app>
 </template>
 
 <script >
 import { Component, Vue } from "vue-property-decorator";
 import { Header } from "./components/";
-
-import Case from "./pages/app/casesList.vue";
 
 import VueMq from "vue-mq";
 
@@ -27,8 +25,7 @@ Vue.use(VueMq, {
 
 @Component({
   components: {
-    Header,
-    Case
+    Header
   }
 })
 export default class App extends Vue {}

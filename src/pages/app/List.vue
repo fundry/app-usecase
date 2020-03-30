@@ -9,8 +9,6 @@
       <button>Create Case</button>
     </BModal>
 
-    <CreateUsecaseModal />
-
     <div class="body">
       <div v-if="hasCase === true">
         <h1>
@@ -33,7 +31,9 @@
       <div class="usecase-list">
         <p id="label">Cases</p>
 
-        <div v-for="C in Cases" v-bind:key="C.id" id="usecase-container">{{ C.name }}</div>
+        <div v-for="C in Cases" v-bind:key="C.id" id="usecase-container">
+          <router-link to="/case">{{ C.name }}</router-link>
+        </div>
 
         <div @click="showModal = !showModal">
           <BIconPlus id="lg-icon" />
@@ -41,29 +41,7 @@
       </div>
       <hr />
 
-      <div class="usecase-list">
-        <p>UseCases</p>
-
-        <button>
-          <router-link to="/create">Create Usecase</router-link>
-        </button>
-      </div>
-
-      <ul v-for="U in Usecases" v-bind:key="U.id">
-        <div class="li-container">
-          <div>
-            <img alt="Case cover" src />
-            <p>
-              <a href>{{ U.author }}</a>
-            </p>
-          </div>
-          <h4>
-            <a href="/">{{ U.title }}</a>
-          </h4>
-
-          <BIconThreeDotsVertical id="icon" />
-        </div>
-      </ul>
+      <Usecases :usecase="{Usecases}" />
     </div>
   </div>
 </template>
@@ -72,16 +50,11 @@
 import { Component, Vue } from "vue-property-decorator";
 import { gql } from "apollo-boost";
 import { mapActions, mapGetters } from "vuex";
-import {
-  BModal,
-  BIconThreeDotsVertical,
-  BIconPlus,
-  BIconFolder
-} from "bootstrap-vue";
+import { BModal, BIconPlus, BIconFolder } from "bootstrap-vue";
 
+import Usecases from "./lists/usecases.vue";
 import { UseCase, Cases } from "../../data/queries";
 import { Create_UseCase, CREATE_CASE } from "../../data/mutations";
-import { CreateUsecaseModal } from "../../components//modals/";
 
 new Vue({
   apollo: {}
@@ -90,10 +63,10 @@ new Vue({
 export default {
   name: "Cases",
   components: {
-    BIconThreeDotsVertical,
     BIconPlus,
     BIconFolder,
-    BModal
+    BModal,
+    Usecases
   },
 
   data: () => {
@@ -183,18 +156,6 @@ export default {
   padding-top: 3px;
 }
 
-.li-container {
-  display: flex;
-  padding: 0.5em;
-  margin: 0.5em;
-  justify-content: space-between;
-  & h4 {
-    padding-top: 5px;
-    font-weight: normal;
-    font-size: 1.4rem;
-  }
-}
-
 #top {
   display: flex;
   justify-content: space-between;
@@ -230,12 +191,5 @@ button {
   color: black;
   border-radius: 5px;
   border: 1px solid black;
-}
-
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
 }
 </style>

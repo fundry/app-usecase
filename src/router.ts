@@ -8,7 +8,8 @@ import {
     Signup,
     Import,
     Profile,
-    Cases
+    Case,
+    List
 } from "./pages/";
 
 Vue.use(VueRouter);
@@ -23,8 +24,8 @@ const router = new VueRouter({
 
         {
             path: "/",
-            component: Cases,
-            name: "Case",
+            component: List,
+            name: "List",
             redirect: !auth ? "/login" : null
         },
 
@@ -32,6 +33,12 @@ const router = new VueRouter({
             path: "/create",
             component: CreateCase,
             name: "Create",
+            redirect: !auth ? "/login" : null
+        },
+        {
+            path: "/case",
+            component: Case,
+            name: "Case",
             redirect: !auth ? "/login" : null
         },
         {
