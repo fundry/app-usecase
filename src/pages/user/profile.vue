@@ -1,7 +1,7 @@
 <template>
-  <div id="body">
+  <div>
     <div class="profile">
-      <img alt="user" />
+      <img alt="user" src="../../assets/images/sample.png" />
       <div>
         <h3>Nwani Victory</h3>
         <h5>vickywane@gmail.com</h5>
@@ -26,33 +26,6 @@ export default class App extends Vue {}
 </script>
 
 <style scoped lang="postcss">
-#body {
-  margin-top: 1em;
-  font-family: system-ui;
-  font-size: responsive;
-}
-
-h3 {
-  padding: 0.75rem 1.25rem;
-  font-size: 3rem;
-  @media (--sm) {
-    font-size: 1rem;
-    color: var(--viridian-green);
-  }
-  @media (--md) {
-    font-size: 2rem;
-    color: var(--turtle-green);
-  }
-
-  @media (--xl) {
-    font-size: 3rem;
-    color: var(--living-coral);
-  }
-
-  &:hover {
-  }
-}
-
 .profile {
   display: flex;
   padding: 0.7rem 0.5rem;
@@ -61,15 +34,36 @@ h3 {
     padding-left: 23px;
   }
   & img {
-    padding-top: 15px;
+    height: auto;
+    width: 7rem;
+  }
+  & h3 {
+    padding: 0.75rem 1.25rem;
+    font-size: 3rem;
+    @media (--sm) {
+      font-size: 1rem;
+      color: var(--viridian-green);
+    }
+    @media (--md) {
+      font-size: 2rem;
+      color: var(--turtle-green);
+    }
+
+    @media (--xl) {
+      font-size: 3rem;
+      color: var(--living-coral);
+    }
+
+    &:hover {
+    }
   }
 }
 
-.links { 
+.links {
   display: flex;
   justify-content: space-between;
-  & h4 { 
-    cursor : pointer;
+  & h4 {
+    cursor: pointer;
     font-weight: normal;
     padding: 1rem;
   }

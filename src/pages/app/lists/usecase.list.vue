@@ -67,6 +67,8 @@ export default {
     border: 1px solid black;
     padding: 0.3rem 2rem;
     border-radius: 5px;
+    &:hover {
+    }
   }
 }
 

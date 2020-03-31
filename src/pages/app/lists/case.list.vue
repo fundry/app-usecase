@@ -13,7 +13,12 @@
       <p id="label">Cases</p>
       <div class="usecase-list">
         <div class="slider">
-          <div v-for="c in caseList" v-bind:key="c.id" id="usecase-container">
+          <div
+            draggable="return true"
+            v-for="c in caseList"
+            v-bind:key="c.id"
+            id="usecase-container"
+          >
             <router-link to="/case">{{ c.name }}</router-link>
           </div>
         </div>
@@ -105,9 +110,11 @@ export default {
 .slider {
   display: flex;
   width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow: auto;
   & div {
+    -webkit-user-drag: element;
+    -webkit-overflow-scrolling: touch;
+
     scroll-behavior: smooth;
     scroll-snap-align: start;
     box-shadow: 1px 3px 4px grey;
