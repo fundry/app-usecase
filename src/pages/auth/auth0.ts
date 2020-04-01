@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import createAuth0Client from '@auth0/auth0-spa-js';
+import { mapActions, mapGetters } from 'vuex'
 
 //TODO: Improve typescript usage in this file
 
@@ -11,16 +12,14 @@ const CLIENT_ID: string = process.env.VUE_APP_AUTH_CLIENT_ID;
 
 console.log(DOMAIN, CLIENT_ID, 'credentials');
 
-/** Define a default action to perform after authentication */
+/** Action adter auth*/
 const DEFAULT_REDIRECT_CALLBACK = () =>
   window.history.replaceState({}, document.title, window.location.pathname);
 
 let instance: any;
 
-/** Returns the current instance of the SDK */
 export const getInstance = () => instance;
 
-/** Creates an instance of the Auth0 SDK */
 export const useAuth0 = ({
   onRedirectCallback = DEFAULT_REDIRECT_CALLBACK,
   redirectUri = window.location.origin,
@@ -28,23 +27,24 @@ export const useAuth0 = ({
 }) => {
   if (instance) return instance;
 
-  // The 'instance' is simply a Vue object
+  const Any: any = null;
 
-  const Any: any = null
   instance = new Vue({
+    computed: mapGetters(["isAuthenticated"]),
     data() {
       return {
         loading: true,
-        isAuthenticated: false,
+        isAuthenticated: false, // should come from vuex
         user: {},
-
         auth0Client: Any,
         popupOpen: false,
         error: null,
-      };
+      }
     },
     methods: {
-      /** Authenticates the user using a popup window */
+      // from vuex store
+      ...mapActions(["authUser"]),
+
       async loginWithPopup(o: any) {
         this.popupOpen = true;
 
@@ -91,7 +91,6 @@ export const useAuth0 = ({
         return this.auth0Client.getTokenWithPopup(o);
       },
       /** Logs the user out and removes their session on the authorization server */
-
       logout(o: any) {
         return this.auth0Client.logout(o);
       },
@@ -129,6 +128,8 @@ export const useAuth0 = ({
         this.isAuthenticated = await this.auth0Client.isAuthenticated();
         this.user = await this.auth0Client.getUser();
         this.loading = false;
+
+        this.authUser()
       }
     }
   });

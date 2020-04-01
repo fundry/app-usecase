@@ -7,7 +7,7 @@
       <h5>{{ CaseName }}</h5>
     </div>
 
-    <ul v-if="auth == true" id="flex">
+    <ul v-if="isAuthenticated == true" id="flex">
       <router-link to="/explore" class="link">
         <p>Explore</p>
       </router-link>
@@ -24,11 +24,10 @@ import Vue from "vue";
 import { BIconList } from "bootstrap-vue";
 import { mapGetters, mapActions } from "vuex";
 
-const t = false;
 export default {
   name: "Header",
   components: {},
-  computed: mapGetters(["auth"]),
+  computed: mapGetters(["isAuthenticated"]),
   methods: {
     ...mapActions(["authUser"])
   },
