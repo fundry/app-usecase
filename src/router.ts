@@ -14,8 +14,9 @@ import {
 
 Vue.use(VueRouter);
 
-const auth = true;
+const auth: boolean = true;
 
+// @ts-ignore
 const router = new VueRouter({
     mode: "history",
     routes: [
@@ -25,6 +26,7 @@ const router = new VueRouter({
             path: "/explore",
             component: Explore,
             name: "Explore",
+            // @ts-ignore
             redirect: !auth ? "/login" : null
         },
 
@@ -32,6 +34,7 @@ const router = new VueRouter({
             path: "/",
             component: List,
             name: "List",
+            // @ts-ignore
             redirect: !auth ? "/login" : null
         },
 
@@ -39,30 +42,35 @@ const router = new VueRouter({
             path: "/create",
             component: CreateCase,
             name: "Create",
+            // @ts-ignore
             redirect: !auth ? "/login" : null
         },
         {
             path: "/case",
             component: Case,
             name: "Case",
+            // @ts-ignore
             redirect: !auth ? "/login" : null
         },
         {
             path: "/create-usecase",
             component: Edit,
             name: "Create Usecase",
+            // @ts-ignore
             redirect: !auth ? "/login" : null
         },
         {
             path: "/import",
             component: Import,
             name: "Import",
+            // @ts-ignore
             redirect: !auth ? "/login" : null
         },
         {
             path: "/profile",
             component: Profile,
             name: "Profile",
+            // @ts-ignore
             redirect: !auth ? "/login" : null
         }
     ]
