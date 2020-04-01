@@ -14,7 +14,7 @@ import {
 
 Vue.use(VueRouter);
 
-const auth: boolean = true;
+const auth: boolean = false;
 
 // @ts-ignore
 const router = new VueRouter({
