@@ -1,16 +1,16 @@
 <template>
-  <div>
-    <div id="body">
-      <div>
-        <input placeholder="Username or email" />
-      </div>
-      <br />
-      <div>
-        <input placeholder="Password" />
-      </div>
-      <br />
-      <p>OR</p>
-      <button>Google Signin</button>
+  <div id="body">
+    <div>
+      <input placeholder="Username or email" />
+    </div>
+    <br />
+    <div>
+      <input placeholder="Password" />
+    </div>
+    <br />
+    <p>OR</p>
+    <div v-if="!$auth.loading">
+      <button @click="login">Google Signin</button>
       <div>
         <br />
         <router-link to="/">Create Account</router-link>
@@ -23,11 +23,15 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 
-@Component({
-  components: {
+export default {
+  name: "Login",
+  methods: {
+    login() {
+      // @ts-ignore
+      this.$auth.loginWithRedirect();
+    }
   }
-})
-export default class App extends Vue {}
+};
 </script>
 
 <style scoped >
@@ -47,6 +51,7 @@ input {
   padding-left: 20px;
   border-radius: 5px;
   height: 55px;
+  outline: 0px;
 }
 
 p {
@@ -57,6 +62,7 @@ button {
   padding: 0.7em 5em;
   background: transparent;
   color: black;
+  outline: 0px;
   border-radius: 5px;
 }
 </style>

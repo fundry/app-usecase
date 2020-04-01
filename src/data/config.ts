@@ -7,7 +7,7 @@ import { ApolloLink, HttpLink } from "apollo-boost";
 
 dotenv.config(); // ------------> having issues with using vue default way of loading envs
 
-const ENDPOINT: any = process.env.VUE_GRAPHQL_ENDPOINT;
+const ENDPOINT: any = process.env.VUE_APP_GRAPHQL_ENDPOINT;
 // CHECK HOW TO LOAD ENV VARS IN VUE
 console.log(ENDPOINT, "ENDPOINTS");
 
