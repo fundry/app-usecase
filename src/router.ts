@@ -17,7 +17,7 @@ Vue.use(VueRouter);
 const auth = true;
 
 const router = new VueRouter({
-    mode: "hash",
+    mode: "history",
     routes: [
         { path: "/login", component: Login, name: "Login" },
         { path: "/signup", component: Signup, name: "Signup" },
