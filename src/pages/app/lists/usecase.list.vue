@@ -4,7 +4,7 @@
       <p>UseCases</p>
 
       <button>
-        <router-link to="/create">Create Usecase</router-link>
+        <router-link to="/create" id="link">Create Usecase</router-link>
       </button>
     </div>
 
@@ -25,7 +25,7 @@
     </ul>
   </div>
 </template>
-
+tgn
 <script>
 import { Component, Vue } from "vue-property-decorator";
 import { mapActions, mapGetters } from "vuex";
@@ -52,6 +52,10 @@ export default {
 </script>
 
 <style scoped lang="postcss" >
+#limk {
+  text-decoration: none;
+}
+
 .usecase-list {
   display: flex;
   padding: 0.3em;
@@ -61,11 +65,12 @@ export default {
     font-size: 1.3rem;
   }
   & button {
-    align-items: center;
+    text-decoration: none;
+    text-align: center;
     background: transparent;
     color: black;
     border: 1px solid black;
-    padding: 0.3rem 2rem;
+    padding: 0.1rem 2rem;
     border-radius: 5px;
     &:hover {
     }

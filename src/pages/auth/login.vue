@@ -46,7 +46,7 @@ export default {
 
 <style scoped  lang="postcss" >
 #box {
-  box-shadow: 0px 3px 4px grey;
+  box-shadow: 0px 4px 6px grey;
   margin: 5em;
   text-align: center;
   place-items: center;
@@ -61,6 +61,8 @@ export default {
   text-align: center;
   & h4 {
     padding: 1rem;
+    font-size: 1.8rem;
+    color: chocolate;
   }
   & input {
     font-size: 1.1em;

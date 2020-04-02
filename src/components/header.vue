@@ -6,7 +6,6 @@
     <div>
       <h5>{{ CaseName }}</h5>
     </div>
-
     <ul v-if="isAuthenticated == true" id="flex">
       <router-link to="/explore" class="link">
         <p>Explore</p>
@@ -50,8 +49,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0.2em 1em;
-  padding-top: 7px;
+  padding: 0.1em 1em;
   box-shadow: 0px 1.5px 2px grey;
   border-bottom: 1px solid grey;
   & p {
@@ -61,12 +59,12 @@ export default {
   & h3 {
     color: chocolate;
     font-weight: lighter;
-    padding-top: 12px;
+    padding-top: 15px;
     font-size: 1.7em;
   }
   & img {
     height: auto;
-    width: 3.5em;
+    width: 3.1em;
   }
 }
 

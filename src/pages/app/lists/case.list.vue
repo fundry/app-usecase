@@ -63,10 +63,10 @@ export default {
 
 <style scoped lang="postcss" >
 .contain {
-  margin: 1rem;
+  margin: 0.5rem;
   & p {
-    padding: 5px 20px 5px 10px;
-    font-size: 1.3rem;
+    padding: 1px 20px 5px 10px;
+    font-size: 1.5rem;
   }
 }
 

@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import { mapGetters } from 'vuex'
 
 import {
     Login,
@@ -14,7 +15,13 @@ import {
 
 Vue.use(VueRouter);
 
-const auth: boolean = false;
+let a = new Vue({
+    computed: mapGetters(["isAuthenticated"]),
+})
+
+const auth: boolean = true;
+
+console.log(a, 'auth')
 
 // @ts-ignore
 const router = new VueRouter({

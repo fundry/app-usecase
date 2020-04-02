@@ -1,9 +1,11 @@
 /*
-Inorder to enforce brevity, Auth Logic is moved to Auth0 file and thus updated here
+  ======= Inorder to enforce brevity,
+  ======= Auth Logic is moved to Auth0 file 
+  ========and thus updated here
 */
 
 const state: any = {
-  isAuthenticated: false
+  isAuthenticated: true
 
 };
 
