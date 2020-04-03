@@ -1,21 +1,7 @@
 <template>
   <div onselectstart="return false">
     <div v-if="hasCase === true" class="body">
-      <div>
-        <h1>
-          Welcome
-          <b>Nwani Victory</b>
-        </h1>
-        <p v-for="U in Users" v-bind:key="U.id">{{ U.name }}</p>
-
-        <p>
-          You're yet to create a case.
-          <br />Usecase are contained within a single cases.
-        </p>
-        <nuxt-link to="/app/create/case">
-          <button>Create Case</button>
-        </nuxt-link>
-      </div>
+      <Create />
     </div>
 
     <div v-if="hasCase === false">
@@ -33,6 +19,7 @@ import { BModal, BIconPlus, BIconFolder } from "bootstrap-vue";
 
 import Usecases from "./lists/usecase.list.vue";
 import Cases from "./lists/case.list.vue";
+import Create from "./create/create";
 
 import { GET_CASES, GET_USECASES } from "../../data/queries";
 import { Create_UseCase, CREATE_CASE } from "../../data/mutations";
@@ -45,11 +32,12 @@ export default {
   name: "List",
   components: {
     Usecases,
-    Cases
+    Cases,
+    Create
   },
 
   data: () => {
-    return { hasCase: false, showModal: false };
+    return { hasCase: true, showModal: false };
   },
 
   apollo: {

@@ -1,12 +1,12 @@
 <template>
-  <div onselectstart="return false" >
+  <div onselectstart="return false">
     <div id="body">
       <div>
         <br />
 
         <p id="question">You want to document an action!</p>
         <p id="question">How would you like to do that?</p>
-       
+
         <div id="flex" v-if="selected !== true">
           <BCard id="card">
             <router-link to="/create-usecase">
@@ -19,7 +19,10 @@
             </p>
 
             <div id="more">
-              <a href="/"> Learn More <BIconArrowRight id="icon-learn" /> </a>
+              <a href="/">
+                Learn More
+                <BIconArrowRight id="icon-learn" />
+              </a>
             </div>
           </BCard>
 
@@ -32,7 +35,10 @@
               within the project
             </p>
             <div id="more">
-              <a href="/"> Learn More <BIconArrowRight id="icon-learn" /> </a>
+              <a href="/">
+                Learn More
+                <BIconArrowRight id="icon-learn" />
+              </a>
             </div>
           </BCard>
         </div>
@@ -44,12 +50,7 @@
         <div id="flex">
           <p id="input-value">Name</p>
 
-          <input
-            id="usecase"
-            v-model.trim="Case"
-            type="text"
-            placeholder="Case Name"
-          />
+          <input id="usecase" v-model.trim="Case" type="text" placeholder="Case Name" />
         </div>
         <router-link to="/">
           <p id="link">Continue</p>
@@ -79,9 +80,11 @@ export default {
 <style scoped>
 #more {
   text-align: center;
-  .icon-learn {
-    font-size: 2em;
-  }
+}
+
+#flex {
+  display: flex;
+  justify-content: space-around;
 }
 
 #link {

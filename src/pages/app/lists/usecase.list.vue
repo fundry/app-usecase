@@ -2,10 +2,9 @@
   <div onselectstart="return false">
     <div class="usecase-list">
       <p>UseCases</p>
-
-      <button>
-        <router-link to="/create" id="link">Create Usecase</router-link>
-      </button>
+      <router-link to="/create-usecase" id="link">
+        <button>Create Usecase</button>
+      </router-link>
     </div>
 
     <ul class="list">
@@ -52,7 +51,7 @@ export default {
 </script>
 
 <style scoped lang="postcss" >
-#limk {
+#link {
   text-decoration: none;
 }
 
@@ -62,7 +61,7 @@ export default {
   justify-content: space-between;
   & p {
     padding: 10px 20px 5px 10px;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
   & button {
     text-decoration: none;
@@ -70,7 +69,9 @@ export default {
     background: transparent;
     color: black;
     border: 1px solid black;
-    padding: 0.1rem 2rem;
+    padding: 0.7rem 2rem;
+    margin-right: 2rem;
+    outline: 0px;
     border-radius: 5px;
     &:hover {
     }

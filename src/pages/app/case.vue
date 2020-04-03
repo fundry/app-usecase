@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="profile">
-      <div class="profile-contain">
+      <div class="profile-contain" onselectstart="return false">
         <div>
           <div class="profile-item">
             <img alt="Usecase cover" src="../../assets/images/sample.png" />
@@ -24,7 +24,7 @@
 
               <li>
                 <div id="flex">
-                  <BIconEnvelopeOpen id="opt-icons" />Collaborators
+                  <BIconEnvelopeOpen id="opt-icons" />Invite
                 </div>
               </li>
 
@@ -55,7 +55,7 @@
       </div>
 
       <div class="desc">
-        <h5>Hasura</h5>
+        <h5 onselectstart="return false">Hasura</h5>
 
         <p>Description of Hasura</p>
       </div>
@@ -157,7 +157,6 @@ export default {
       position: aboslute;
     }
     & li {
-      color: darkblue;
     }
   }
   &: focus-within ul > li;

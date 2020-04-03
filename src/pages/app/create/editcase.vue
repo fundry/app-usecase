@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header case="" screen="edit" />
     <div id="alert">
       <BIconStar id="icon" />
       <p>Double tap any text to edit or continue draft!</p>
@@ -26,7 +25,6 @@ import { Header } from "../../../components/";
 export default {
   name: "",
   components: {
-    Header,
     // Outline,
     BIconStar,
     BIconX

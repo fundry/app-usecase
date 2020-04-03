@@ -23,8 +23,10 @@
           </div>
         </div>
 
-        <div id="btn" @click="showModal = !showModal">
-          <BIconPlus id="lg-icon" />
+        <div class="create-btn">
+          <div @click="showModal = !showModal">
+            <BIconPlus id="lg-icon" />
+          </div>
         </div>
       </div>
       <hr />
@@ -70,16 +72,25 @@ export default {
   }
 }
 
-#btn {
+.create-btn {
   position: absolute;
   text-align: right;
-  margin-right: 10px;
-  background: grey;
-  opacity: 1;
-  padding: 0.2rem;
-  border-radius: 50%;
-  display: flex;
-  box-shadow: 0px 3px 4px grey;
+  float: right;
+  & div {
+    text-align: right;
+    margin-right: 10px;
+    background: grey;
+    opacity: 1;
+    padding: 0.2rem;
+    border-radius: 50%;
+    display: flex;
+    box-shadow: 0px 3px 4px grey;
+  }
+}
+
+#lg-icon {
+  cursor: pointer;
+  font-size: 3rem;
 }
 
 .modal {
@@ -144,11 +155,6 @@ export default {
   & a {
     text-decoration: none;
   }
-}
-
-#lg-icon {
-  cursor: pointer;
-  font-size: 3rem;
 }
 
 #icon {
