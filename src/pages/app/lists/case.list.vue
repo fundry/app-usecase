@@ -23,7 +23,7 @@
           </div>
         </div>
 
-        <div @click="showModal = !showModal">
+        <div id="btn" @click="showModal = !showModal">
           <BIconPlus id="lg-icon" />
         </div>
       </div>
@@ -68,6 +68,18 @@ export default {
     padding: 1px 20px 5px 10px;
     font-size: 1.5rem;
   }
+}
+
+#btn {
+  position: absolute;
+  text-align: right;
+  margin-right: 10px;
+  background: grey;
+  opacity: 1;
+  padding: 0.2rem;
+  border-radius: 50%;
+  display: flex;
+  box-shadow: 0px 3px 4px grey;
 }
 
 .modal {

@@ -8,8 +8,8 @@
       </button>
     </div>
 
-    <ul v-for="u in usecase" v-bind:key="u.id">
-      <div class="li-container">
+    <ul class="list">
+      <li v-for="u in usecase" v-bind:key="u.id">
         <div>
           <img alt="Case cover" src />
           <p>
@@ -21,11 +21,11 @@
         </h4>
 
         <BIconThreeDotsVertical id="icon" />
-      </div>
+      </li>
     </ul>
   </div>
 </template>
-tgn
+ 
 <script>
 import { Component, Vue } from "vue-property-decorator";
 import { mapActions, mapGetters } from "vuex";
@@ -77,21 +77,24 @@ export default {
   }
 }
 
+.list {
+  list-style: none;
+  & li {
+    display: flex;
+    padding: 0.5em;
+    margin: 0.5em;
+    justify-content: space-between;
+    & h4 {
+      padding-top: 5px;
+      font-weight: normal;
+      font-size: 1.4rem;
+    }
+  }
+}
+
 #icon {
   cursor: pointer;
   font-size: 2.1rem;
   padding-top: 3px;
-}
-
-.li-container {
-  display: flex;
-  padding: 0.5em;
-  margin: 0.5em;
-  justify-content: space-between;
-  & h4 {
-    padding-top: 5px;
-    font-weight: normal;
-    font-size: 1.4rem;
-  }
 }
 </style>
