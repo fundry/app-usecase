@@ -2,7 +2,7 @@
   <div onselectstart="return false">
     <div class="usecase-list">
       <p>UseCases</p>
-      <router-link to="/create-usecase" id="link">
+      <router-link to="/create-usecase" id="link" v-if="page !== 'explore'">
         <button>Create Usecase</button>
       </router-link>
     </div>
@@ -46,7 +46,7 @@ export default {
     ...mapActions(["deleteCase"])
   },
 
-  props: ["usecase"]
+  props: ["usecase", "page"]
 };
 </script>
 

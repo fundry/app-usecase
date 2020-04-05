@@ -11,6 +11,7 @@
         <p>Explore</p>
       </router-link>
 
+      <BIconBell id="icon" />
       <router-link to="/profile">
         <img alt="user illustration" src="../assets/images/sample.png" />
       </router-link>
@@ -20,12 +21,14 @@
 
 <script >
 import Vue from "vue";
-import { BIconList } from "bootstrap-vue";
+import { BIconList, BIconBell } from "bootstrap-vue";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "Header",
-  components: {},
+  components: {
+    BIconBell
+  },
   computed: mapGetters(["isAuthenticated"]),
   methods: {
     ...mapActions(["authUser"])
@@ -36,8 +39,10 @@ export default {
 
 <style scoped lang="postcss" >
 #icon {
-  font-size: 2.5rem;
+  font-size: 3rem;
   padding-top: 7px;
+  padding-right: 15px;
+  cursor: pointer;
 }
 
 .link {

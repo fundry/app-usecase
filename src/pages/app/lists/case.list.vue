@@ -11,6 +11,7 @@
 
     <div v-if="hasCase === false" class="contain">
       <p id="label">Cases</p>
+
       <div class="usecase-list">
         <div class="slider">
           <div
@@ -23,7 +24,7 @@
           </div>
         </div>
 
-        <div class="create-btn">
+        <div class="create-btn" v-if="page !== 'explore'">
           <div @click="showModal = !showModal">
             <BIconPlus id="lg-icon" />
           </div>
@@ -53,7 +54,7 @@ export default {
       hasCase: false
     };
   },
-  props: ["caseList"],
+  props: ["caseList", "page"],
 
   // vuex
   computed: mapGetters(["get_case"]),
