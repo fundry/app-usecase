@@ -57,6 +57,8 @@ export default {
     font-size: 1.1rem;
   }
   & h3 {
+    display: flex;
+    place-items: center;
     color: chocolate;
     font-weight: lighter;
     padding-top: 15px;
