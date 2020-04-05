@@ -2,67 +2,76 @@
   <div onselectstart="return false">
     <div class="types-container">
       <br />
-      <h5>You want to document an action!</h5>
-      <h5>How would you like to do that?</h5>
 
-      <br />
-      <div id="flex" v-if="selected !== true">
-        <BCard class="type-card">
-          <router-link to="/create-usecase">
-            <h4>A Usecase</h4>
-          </router-link>
-          <p>
-            Create a single usecase
-            <br />
-          </p>
-          <hr />
+      <div v-if="selected !== true">
+        <h5>You want to document an action!</h5>
+        <h5>How would you like to do that?</h5>
+      </div>
+      <div v-else>
+        <h4>Create a single case.</h4>
+      </div>
 
-          <p>
-            <br />This could be a new technology you tried out and your review
-          </p>
+      <div class="type-container">
+        <br />
 
-          <div>
-            <a href="/">
-              Learn More
-              <BIconArrowRight id="icon-learn" />
-            </a>
-          </div>
-        </BCard>
+        <div id="flex" v-if="selected !== true">
+          <BCard class="type-card">
+            <router-link to="/create-usecase">
+              <h4>A Usecase</h4>
+            </router-link>
+            <p>
+              Create a single usecase
+              <br />
+            </p>
+            <hr />
 
-        <BCard class="type-card" @click="selected = true">
-          <h4>An Entire Case</h4>
-          <p>
-            Create a virtual folder for your usecases.
-            <br />
-          </p>
-          <hr />
-          <p>
-            <br />A case could be a project with usecases as actions taken
-            within the project
-          </p>
-          <div>
-            <a href="/">
-              Learn More
-              <BIconArrowRight id="icon-learn" />
-            </a>
-          </div>
-        </BCard>
+            <p>
+              <br />This could be a new technology you tried out and your review
+            </p>
+
+            <div>
+              <a href="/">
+                Learn More
+                <BIconArrowRight id="icon-learn" />
+              </a>
+            </div>
+          </BCard>
+
+          <BCard class="type-card" @click="selected = true">
+            <h4>An Entire Case</h4>
+            <p>
+              Create a virtual folder for your usecases.
+              <br />
+            </p>
+            <hr />
+            <p>
+              <br />A case could be a project with usecases as actions taken
+              within the project
+            </p>
+            <div>
+              <a href="/">
+                Learn More
+                <BIconArrowRight id="icon-learn" />
+              </a>
+            </div>
+          </BCard>
+        </div>
       </div>
     </div>
 
-    <br />
-    <br />
-    <BCard v-if="selected === true" class="type-input">
-      <h6>Case Name</h6>
-      <div id="flex">
-        <label id="input-value">Name</label>
+    <div class="type-container">
+      <BCard v-if="selected === true" class="type-input">
+        <h6>Case Name</h6>
+        <div id="flex">
+          <label id="input-value">Name</label>
 
-        <input id="usecase" v-model.trim="Case" type="text" placeholder="Case Name" />
-      </div>
-      <router-link to="/" id="link">
-        <h5>Create</h5>
-      </router-link>
-    </BCard>
+          <input id="usecase" v-model.trim="Case" type="text" placeholder="Case Name" />
+        </div>
+        <router-link to="/" id="link">
+          <h5>Create</h5>
+        </router-link>
+      </BCard>
+    </div>
   </div>
 </template>
 
@@ -149,6 +158,13 @@ export default {
       font-size: 1.3rem;
     }
   }
+}
+
+.type-container {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  align-items: center;
 }
 
 .type-input {

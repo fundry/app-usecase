@@ -19,7 +19,7 @@ let a = new Vue({
     computed: mapGetters(["isAuthenticated"]),
 })
 
-const auth: boolean = false;
+const auth: boolean = true;
 
 console.log(a, 'auth')
 
