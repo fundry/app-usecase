@@ -1,6 +1,6 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import { mapGetters } from 'vuex'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import { mapGetters } from 'vuex';
 
 import {
     Login,
@@ -10,77 +10,94 @@ import {
     Import,
     Profile,
     Case,
-    List, Explore
-} from "./pages/";
+    Settings,
+    List,
+    Explore,
+    Editor,
+} from './pages/';
 
 Vue.use(VueRouter);
 
 let a = new Vue({
-    computed: mapGetters(["isAuthenticated"]),
-})
+    computed: mapGetters(['isAuthenticated']),
+});
 
 const auth: boolean = true;
 
-console.log(a, 'auth')
+console.log(a, 'auth');
 
 // @ts-ignore
 const router = new VueRouter({
-    mode: "history",
+    mode: 'history',
     routes: [
-        { path: "/login", component: Login, name: "Login" },
-        { path: "/signup", component: Signup, name: "Signup" },
+        { path: '/login', component: Login, name: 'Login' },
+        { path: '/signup', component: Signup, name: 'Signup' },
         {
-            path: "/explore",
+            path: '/explore',
             component: Explore,
-            name: "Explore",
+            name: 'Explore',
             // @ts-ignore
-            redirect: !auth ? "/login" : null
+            redirect: !auth ? '/login' : null,
         },
 
         {
-            path: "/",
+            path: '/',
             component: List,
-            name: "List",
+            name: 'List',
             // @ts-ignore
-            redirect: !auth ? "/login" : null
+            redirect: !auth ? '/login' : null,
         },
 
         {
-            path: "/create",
+            path: '/editor',
+            component: Editor,
+            name: 'Editor',
+            // @ts-ignore
+            redirect: !auth ? '/login' : null,
+        },
+        {
+            path: '/create',
             component: CreateCase,
-            name: "Create",
+            name: 'Create',
             // @ts-ignore
-            redirect: !auth ? "/login" : null
+            redirect: !auth ? '/login' : null,
         },
         {
-            path: "/case",
+            path: '/settings',
+            component: Settings,
+            name: 'Settings',
+            // @ts-ignore
+            redirect: !auth ? '/login' : null,
+        },
+        {
+            path: '/case',
             component: Case,
-            name: "Case",
+            name: 'Case',
             // @ts-ignore
-            redirect: !auth ? "/login" : null
+            redirect: !auth ? '/login' : null,
         },
         {
-            path: "/create-usecase",
+            path: '/create-usecase',
             component: Edit,
-            name: "Create Usecase",
+            name: 'Create Usecase',
             // @ts-ignore
-            redirect: !auth ? "/login" : null
+            redirect: !auth ? '/login' : null,
         },
         {
-            path: "/import",
+            path: '/import',
             component: Import,
-            name: "Import",
+            name: 'Import',
             // @ts-ignore
-            redirect: !auth ? "/login" : null
+            redirect: !auth ? '/login' : null,
         },
         {
-            path: "/profile",
+            path: '/profile',
             component: Profile,
-            name: "Profile",
+            name: 'Profile',
             // @ts-ignore
-            redirect: !auth ? "/login" : null
-        }
-    ]
+            redirect: !auth ? '/login' : null,
+        },
+    ],
 });
 
 export default router;

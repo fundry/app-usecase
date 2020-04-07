@@ -37,7 +37,7 @@ export default {
   },
 
   data: () => {
-    return { hasCase: true, showModal: false };
+    return { hasCase: false, showModal: false };
   },
 
   apollo: {

@@ -10,7 +10,7 @@
     <ul class="list">
       <li v-for="u in usecase" v-bind:key="u.id">
         <div>
-          <img alt="Case cover" src />
+          <img alt="Case cover" src="../../../assets/images/Git.png" />
           <p>
             <a href>{{ u.author }}</a>
           </p>
@@ -90,6 +90,10 @@ export default {
       font-weight: normal;
       font-size: 1.4rem;
     }
+  }
+  & img {
+    max-width: 10%;
+    height: auto;
   }
 }
 

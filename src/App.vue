@@ -1,16 +1,52 @@
 <template>
   <div id="app">
-    <Header />
+    <div>
+      <Header />
+    </div>
 
-    <router-view></router-view>
+    <div class="router">
+      <ul class="router-block">
+        <li>
+          <router-link to="/">
+            <BIconHouse class="icon" />
+          </router-link>
+        </li>
+
+        <li>
+          <router-link to="/editor">
+            <BIconBookHalfFill class="icon" />
+          </router-link>
+        </li>
+
+        <li>
+          <router-link to="/publish">
+            <BIconCursor class="icon" />
+          </router-link>
+        </li>
+
+        <li>
+          <router-link to="/settings">
+            <BIconGear class="icon" />
+          </router-link>
+        </li>
+      </ul>
+
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script >
 import { Component, Vue } from "vue-property-decorator";
-import { Header } from "./components/";
-
 import VueMq from "vue-mq";
+import {
+  BIconHouse,
+  BIconGear,
+  BIconBookHalfFill,
+  BIconCursor
+} from "bootstrap-vue";
+
+import { Header } from "./components/";
 
 Vue.use(VueMq, {
   breakpoints: {
@@ -21,21 +57,43 @@ Vue.use(VueMq, {
   }
 });
 
-@Component({
+export default {
+  name: "App",
   components: {
-    Header
+    Header,
+    BIconCursor,
+    BIconHouse,
+    BIconGear,
+    BIconBookHalfFill
   }
-})
-export default class App extends Vue {}
+};
 </script>
 
-<style lang="postcss">
-#flex {
+<style lang="postcss"   >
+.icon {
+  font-size: 2.2rem;
+  cursor: pointer;
+  color: #fff;
+  &:hover {
+    color: #0e2f5a;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.router {
   display: flex;
 }
 
-#hover {
-  cursor: pointer;
+.router-block {
+  display: grid;
+  padding: 1rem;
+  list-style: none;
+  background: #100e17;
+  color: #fff;
+  height: 85vh;
 }
 
 #app {
@@ -43,23 +101,5 @@ export default class App extends Vue {}
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-}
-
-p {
-  @media (max-width: 400px;) {
-    font-size: 1.2em;
-  }
-
-  @media (max-width: 900px;) {
-    font-size: 1.4em;
-  }
-
-  @media (max-width: 1200px;) {
-    font-size: 1.4em;
-  }
-}
-
-h3 {
-  font-weight: bold;
 }
 </style>
