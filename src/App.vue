@@ -1,52 +1,25 @@
 <template>
-  <div id="app">
-    <div>
+  <div>
+    <div id="app" v-if="isAuthenticated == true">
       <Header />
+
+      <div class="router-contain">
+        <Sidebar />
+        <router-view></router-view>
+      </div>
     </div>
 
-    <div class="router">
-      <ul class="router-block">
-        <li>
-          <router-link to="/">
-            <BIconHouse class="icon" />
-          </router-link>
-        </li>
-
-        <li>
-          <router-link to="/editor">
-            <BIconBookHalfFill class="icon" />
-          </router-link>
-        </li>
-
-        <li>
-          <router-link to="/publish">
-            <BIconCursor class="icon" />
-          </router-link>
-        </li>
-
-        <li>
-          <router-link to="/settings">
-            <BIconGear class="icon" />
-          </router-link>
-        </li>
-      </ul>
-
-      <router-view></router-view>
-    </div>
+    <Login v-else />
   </div>
 </template>
 
 <script >
 import { Component, Vue } from "vue-property-decorator";
 import VueMq from "vue-mq";
-import {
-  BIconHouse,
-  BIconGear,
-  BIconBookHalfFill,
-  BIconCursor
-} from "bootstrap-vue";
+import { mapGetters, mapActions } from "vuex";
 
-import { Header } from "./components/";
+import Login from "./pages/auth/login";
+import { Header, Sidebar } from "./components/";
 
 Vue.use(VueMq, {
   breakpoints: {
@@ -61,39 +34,19 @@ export default {
   name: "App",
   components: {
     Header,
-    BIconCursor,
-    BIconHouse,
-    BIconGear,
-    BIconBookHalfFill
+    Login,
+    Sidebar
+  },
+  computed: mapGetters(["isAuthenticated"]),
+  methods: {
+    ...mapActions(["authUser"])
   }
 };
 </script>
 
-<style lang="postcss"   >
-.icon {
-  font-size: 2.2rem;
-  cursor: pointer;
-  color: #fff;
-  &:hover {
-    color: #0e2f5a;
-  }
-}
-
-a {
-  text-decoration: none;
-}
-
-.router {
+<style scoped lang="postcss" >
+.router-contain {
   display: flex;
-}
-
-.router-block {
-  display: grid;
-  padding: 1rem;
-  list-style: none;
-  background: #100e17;
-  color: #fff;
-  height: 85vh;
 }
 
 #app {

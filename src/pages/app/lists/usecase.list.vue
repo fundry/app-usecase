@@ -57,6 +57,7 @@ export default {
 
 .usecase-list {
   display: flex;
+
   padding: 0.3em;
   justify-content: space-between;
   & p {

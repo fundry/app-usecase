@@ -13,7 +13,9 @@ import {
     Settings,
     List,
     Explore,
+    Publish,
     Editor,
+    Schedules,
 } from './pages/';
 
 Vue.use(VueRouter);
@@ -94,6 +96,20 @@ const router = new VueRouter({
             path: '/profile',
             component: Profile,
             name: 'Profile',
+            // @ts-ignore
+            redirect: !auth ? '/login' : null,
+        },
+        {
+            path: '/publish',
+            component: Publish,
+            name: 'Publish',
+            // @ts-ignore
+            redirect: !auth ? '/login' : null,
+        },
+        {
+            path: '/schedules',
+            component: Schedules,
+            name: 'Schedule',
             // @ts-ignore
             redirect: !auth ? '/login' : null,
         },

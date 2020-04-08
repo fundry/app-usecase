@@ -14,14 +14,16 @@
 
       <div class="usecase-list">
         <div class="slider">
-          <div
+          <ul
             draggable="return true"
             v-for="c in caseList"
             v-bind:key="c.id"
             id="usecase-container"
           >
-            <router-link to="/case">{{ c.name }}</router-link>
-          </div>
+            <li>
+              <router-link to="/case">{{ c.name }}</router-link>
+            </li>
+          </ul>
         </div>
 
         <div class="create-btn" v-if="page !== 'explore'">
@@ -133,12 +135,13 @@ export default {
 
 .slider {
   display: flex;
-  width: 100%;
   overflow: auto;
-  & div {
+  & ul {
     -webkit-user-drag: element;
     -webkit-overflow-scrolling: touch;
-
+    display: flex;
+    list-style: none;
+    flex-direction: row;
     scroll-behavior: smooth;
     scroll-snap-align: start;
     box-shadow: 1px 3px 4px grey;

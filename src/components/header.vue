@@ -3,18 +3,25 @@
     <router-link to="/" class="link">
       <h3>Usecase</h3>
     </router-link>
-    <div>
-      <h5>{{ CaseName }}</h5>
-    </div>
-    <ul v-if="isAuthenticated == true" id="flex">
-      <router-link to="/explore" class="link">
-        <p>Explore</p>
-      </router-link>
 
-      <BIconBell id="icon" />
-      <router-link to="/profile">
-        <img alt="user illustration" src="../assets/images/sample.png" />
-      </router-link>
+    <ul>
+      <li>
+        <h5>{{ CaseName }}</h5>
+      </li>
+      <li v-if="isAuthenticated == true" id="flex">
+        <router-link to="/explore" class="link">
+          <p>Explore</p>
+        </router-link>
+      </li>
+
+      <li>
+        <BIconBell id="icon" />
+      </li>
+      <li>
+        <router-link to="/profile">
+          <img alt="user illustration" src="../assets/images/sample.png" />
+        </router-link>
+      </li>
     </ul>
   </nav>
 </template>
@@ -76,12 +83,15 @@ export default {
 }
 
 ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
 }
 
 li {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 </style>

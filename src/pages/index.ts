@@ -9,3 +9,5 @@ export { default as Profile } from "./user/profile.vue";
 export { default as Explore } from "./explore.vue";
 export { default as Editor } from "./app/editor/editor.vue";
 export { default as Settings } from "./settings/settings.vue";
+export { default as Publish } from "./app/publish/publish.vue";
+export { default as Schedules } from "./app/schedules/schedule.vue";
