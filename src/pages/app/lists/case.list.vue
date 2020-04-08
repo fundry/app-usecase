@@ -155,6 +155,9 @@ export default {
     border: 0px;
     text-align: center;
     flex-shrink: 100%;
+    & li {
+      text-align: center;
+    }
   }
   & a {
     text-decoration: none;

@@ -6,7 +6,7 @@
 
         <div class="router-contain">
           <Sidebar />
-          <router-view></router-view>
+          <router-view id="view"></router-view>
         </div>
       </div>
 
@@ -15,7 +15,7 @@
 
     <div v-else class="small-device">
       <div class="content">
-        <h5>Web Console only accessible via large screen devices.</h5>
+        <h5>The Web Console is only accessible via large screen devices.</h5>
         <hr />
         <p>Get the mobile app</p>
         <div>
@@ -35,6 +35,10 @@ import { mapGetters, mapActions } from "vuex";
 
 import Login from "./pages/auth/login";
 import { Header, Sidebar } from "./components/";
+
+const Alert = () => {
+  alert("Coming  Soon!!");
+};
 
 Vue.use(VueMq, {
   breakpoints: {
@@ -60,8 +64,15 @@ export default {
 </script>
 
 <style scoped lang="postcss" >
+#view {
+  overflow: auto;
+}
+
 .router-contain {
+  overflow: auto;
+
   display: flex;
+  flex-direction: row;
 }
 
 #app {
@@ -80,6 +91,10 @@ export default {
 
 .content {
   text-align: center;
+  & h5 {
+    margin: 0.5rem 2rem;
+    font-size: 1.4rem;
+  }
   & p {
     font-size: 1.2rem;
   }

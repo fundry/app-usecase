@@ -83,8 +83,6 @@ export default {
   list-style: none;
   & li {
     display: flex;
-    padding: 0.5em;
-    margin: 0.5em;
     justify-content: space-between;
     & h4 {
       padding-top: 5px;

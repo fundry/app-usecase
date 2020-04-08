@@ -9,8 +9,8 @@
         </div>
         <hr />
         <div id="flex">
-          <p>Nwani Victory</p>
-          <p>Vickywane@gmail.com</p>
+          <p id="big-text">Nwani Victory</p>
+          <p id="big-text">Vickywane@gmail.com</p>
         </div>
         <h6>Send a copy of actions to my email</h6>
       </div>
@@ -19,11 +19,9 @@
         <h5>Integrations</h5>
         <hr />
       </div>
-      <ul>
-        <li>
-          <img alt="Integration" src="../../assets/images/Git.png" />
-        </li>
-      </ul>
+      <div style="display : flex">
+        <img alt="Github Integration  " src="../../assets/images/Git.png" />
+      </div>
 
       <hr />
       <div id="flex">
@@ -79,6 +77,10 @@ export default {
 </script>
 
 <style scoped lang="postcss" >
+#big-text {
+  font-size: 1.4rem;
+}
+
 .clickable {
   display: flex;
   padding: 0rem 0.5rem;
@@ -108,7 +110,6 @@ export default {
   box-shadow: 0px 3px 5px grey;
   border-radius: 5px;
   padding: 1.5rem 2rem;
-  width: 120%;
   margin: 1rem;
   & button {
     background: red;
@@ -121,13 +122,11 @@ export default {
   & h5 {
     font-weight: bold;
   }
-  & ul {
+  & li {
     list-style: none;
-    display: flex;
-    flex-direction: row;
   }
   & img {
-    max-width: 7%;
+    max-width: 10%;
     height: auto;
   }
   & p {
