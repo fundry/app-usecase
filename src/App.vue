@@ -1,15 +1,30 @@
 <template>
   <div>
-    <div id="app" v-if="isAuthenticated == true">
-      <Header />
+    <div v-if="$mq !== 'mobile'">
+      <div id="app" v-if="isAuthenticated == true">
+        <Header />
 
-      <div class="router-contain">
-        <Sidebar />
-        <router-view></router-view>
+        <div class="router-contain">
+          <Sidebar />
+          <router-view></router-view>
+        </div>
       </div>
+
+      <Login v-else />
     </div>
 
-    <Login v-else />
+    <div v-else class="small-device">
+      <div class="content">
+        <h5>Web Console only accessible via large screen devices.</h5>
+        <hr />
+        <p>Get the mobile app</p>
+        <div>
+          <button>Apple Store</button>
+
+          <button>Google Play Store</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -54,5 +69,32 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+}
+
+.small-device {
+  padding: 1rem;
+  margin-top: 20vh;
+  display: flex;
+  place-self: center;
+  justify-content: center;
+}
+
+.content {
+  text-align: center;
+  & p {
+    font-size: 1.2rem;
+  }
+  & div {
+    display: flex;
+    justify-content: space-around;
+    & button {
+      outline: none;
+      background: transparent;
+      color: #000;
+      border: 1px solid #000;
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+    }
+  }
 }
 </style>

@@ -15,7 +15,7 @@
       </li>
 
       <li>
-        <BIconBell id="icon" />
+        <Notification />
       </li>
       <li>
         <router-link to="/profile">
@@ -28,13 +28,14 @@
 
 <script >
 import Vue from "vue";
-import { BIconList, BIconBell } from "bootstrap-vue";
+import {} from "bootstrap-vue";
 import { mapGetters, mapActions } from "vuex";
+import Notification from "./notification.vue";
 
 export default {
   name: "Header",
   components: {
-    BIconBell
+    Notification
   },
   computed: mapGetters(["isAuthenticated"]),
   methods: {
@@ -45,13 +46,6 @@ export default {
 </script>
 
 <style scoped lang="postcss" >
-#icon {
-  font-size: 3rem;
-  padding-top: 7px;
-  padding-right: 15px;
-  cursor: pointer;
-}
-
 .link {
   text-decoration: none;
 }
