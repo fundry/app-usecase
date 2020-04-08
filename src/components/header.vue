@@ -1,5 +1,5 @@
 <template>
-  <nav class="contain">
+  <nav class="contain" onselectstart="return false">
     <router-link to="/" class="link">
       <h3>Usecase</h3>
     </router-link>

@@ -1,5 +1,5 @@
 <template>
-  <div class="body">
+  <div class="body" onselectstart="return false">
     <div class="box">
       <div>
         <div id="flex">
@@ -33,7 +33,26 @@
     </div>
     <br />
     <div class="box">
-      <p>Preferences pane</p>
+      <h5>Preferences</h5>
+      <hr />
+
+      <div id="flex">
+        <div id="flex">
+          <BIconMoon id="icon" />
+          <p>Dark Mode</p>
+        </div>
+        <div id="flex">
+          <div class="clickable">
+            <p>Turn Off</p>
+            <BIconBrightnessHigh id="icon" />
+          </div>
+          <div class="clickable">
+            <p>Automatic</p>
+
+            <BIconClock id="icon" />
+          </div>
+        </div>
+      </div>
 
       <button>Delete My Account</button>
     </div>
@@ -41,25 +60,44 @@
 </template>
 
 <script>
-import { BIconPencil } from "bootstrap-vue";
+import {
+  BIconPencil,
+  BIconMoon,
+  BIconBrightnessHigh,
+  BIconClock
+} from "bootstrap-vue";
 
 export default {
   name: "Settings",
   components: {
-    BIconPencil
+    BIconPencil,
+    BIconBrightnessHigh,
+    BIconMoon,
+    BIconClock
   }
 };
 </script>
 
 <style scoped lang="postcss" >
+.clickable {
+  display: flex;
+  padding: 0rem 0.5rem;
+  &:hover {
+    cursor: pointer;
+    color: #0e2f5a;
+  }
+}
+
 #flex {
   display: flex;
   justify-content: space-between;
 }
 
 #icon {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   cursor: pointer;
+  margin-left: 7px;
+  margin-right: 7px;
 }
 
 .body {
@@ -93,7 +131,7 @@ export default {
     height: auto;
   }
   & p {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 }
 </style>

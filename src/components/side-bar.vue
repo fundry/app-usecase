@@ -1,62 +1,60 @@
 <template>
-  <div>
-    <ul class="router-block">
-      <br />
-      <li>
-        <router-link to="/">
-          <BIconHouse class="icon" />
-        </router-link>
-      </li>
+  <ul class="router-block" onselectstart="return false">
+    <br />
+    <li>
+      <router-link to="/">
+        <BIconHouse class="icon" />
+      </router-link>
+    </li>
 
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <li>
-        <router-link to="/editor">
-          <BIconBookHalfFill class="icon" />
-        </router-link>
-      </li>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <li>
+      <router-link to="/editor">
+        <BIconBookHalfFill class="icon" />
+      </router-link>
+    </li>
 
-      <br />
-      <br />
-      <li>
-        <router-link to="/schedules">
-          <BIconListCheck class="icon" />
-        </router-link>
-      </li>
-      <br />
-      <br />
-      <li>
-        <router-link to="/publish">
-          <BIconCursor class="icon" />
-        </router-link>
-      </li>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <li>
-        <router-link to="/settings">
-          <BIconGear class="icon" />
-        </router-link>
-      </li>
-    </ul>
-  </div>
+    <br />
+    <br />
+    <li>
+      <router-link to="/schedules">
+        <BIconListCheck class="icon" />
+      </router-link>
+    </li>
+    <br />
+    <br />
+    <li>
+      <router-link to="/publish">
+        <BIconCursor class="icon" />
+      </router-link>
+    </li>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <li>
+      <router-link to="/settings">
+        <BIconGear class="icon" />
+      </router-link>
+    </li>
+  </ul>
 </template>
 
 <script >
@@ -103,5 +101,8 @@ a {
   background: #100e17;
   color: #fff;
   height: 90vh;
+  &:focus {
+    color: chocolate;
+  }
 }
 </style>
