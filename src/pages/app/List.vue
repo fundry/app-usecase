@@ -5,7 +5,7 @@
     </div>
 
     <div v-if="hasCase === false">
-      <Cases :caseList="Cases" />
+      <Cases :caseList="Cases" v-if="userDetails.isOrganization !== false" />
       <Usecases :usecase="Usecases" />
     </div>
   </div>
@@ -47,7 +47,7 @@ export default {
   },
 
   // vuex
-  computed: mapGetters(["get_case"]),
+  computed: mapGetters(["get_case", "userDetails"]),
   methods: {
     ...mapActions(["deleteCase"])
   }

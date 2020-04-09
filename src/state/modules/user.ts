@@ -1,16 +1,20 @@
 /*
   ======= Inorder to enforce brevity,
   ======= Auth Logic is moved to Auth0 file 
-  ========and thus updated here
+  ======= and thus updated here
 */
 
 const state: any = {
-  isAuthenticated: true
-
+  isAuthenticated: true,
+  userDetails: {
+    name: "",
+    isOrganization: false
+  }
 };
 
 const getters = {
-  isAuthenticated: (state: any) => state.isAuthenticated
+  isAuthenticated: (state: any) => state.isAuthenticated,
+  userDetails: (state: any) => state.userDetails
 };
 
 const actions: any = {

@@ -22,7 +22,7 @@
         <br />
       </div>
       <button id="stretch-btn" @click="login = false" v-if="login !== false ">Create Account</button>
-      <button id="stretch-btn" @click="login = true" v-else>Signin Instead</button>
+      <button id="stretch-btn" @click="login = true" v-else>Login Instead</button>
     </div>
   </div>
 </template>

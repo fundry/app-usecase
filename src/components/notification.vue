@@ -43,6 +43,7 @@ export default {
 
 .body {
   padding: 0.1rem;
+  color: #fff;
   & div {
     position: absolute;
     visibility: hidden;

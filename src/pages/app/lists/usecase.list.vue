@@ -15,9 +15,9 @@
             <a href>{{ u.author }}</a>
           </p>
         </div>
-        <h4>
+        <h5>
           <a href="/">{{ u.title }}</a>
-        </h4>
+        </h5>
 
         <BIconThreeDotsVertical id="icon" />
       </li>

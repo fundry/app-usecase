@@ -1,6 +1,5 @@
 <template>
   <ul class="router-block" onselectstart="return false">
-    <br />
     <li>
       <router-link to="/">
         <BIconHouse class="icon" />
@@ -10,6 +9,12 @@
     <br />
     <br />
     <br />
+    <br />
+    <li>
+      <router-link to="/organization">
+        <BIconFolder class="icon" />
+      </router-link>
+    </li>
     <br />
     <br />
     <li>
@@ -60,7 +65,8 @@ import {
   BIconGear,
   BIconBookHalfFill,
   BIconCursor,
-  BIconListCheck
+  BIconListCheck,
+  BIconFolder
 } from "bootstrap-vue";
 
 export default {
@@ -70,6 +76,7 @@ export default {
     BIconHouse,
     BIconGear,
     BIconListCheck,
+    BIconFolder,
     BIconBookHalfFill
   }
 };

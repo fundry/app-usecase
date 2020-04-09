@@ -1,8 +1,16 @@
 <template>
   <nav class="contain" onselectstart="return false">
     <router-link to="/" class="link">
-      <h3>Usecase</h3>
+      <div class="brand">
+        <h3>Usecase |</h3>
+        <h4>{{$route.name}}</h4>
+      </div>
     </router-link>
+
+    <div class="search-box" v-if="$mq !== 'tablet' &&  $route.name !== 'organization'">
+      <BIconSearch id="icon" />
+      <input placeholder="Seach  $route.name" />
+    </div>
 
     <ul>
       <li>
@@ -28,14 +36,15 @@
 
 <script >
 import Vue from "vue";
-import {} from "bootstrap-vue";
+import { BIconSearch } from "bootstrap-vue";
 import { mapGetters, mapActions } from "vuex";
 import Notification from "./notification.vue";
 
 export default {
   name: "Header",
   components: {
-    Notification
+    Notification,
+    BIconSearch
   },
   computed: mapGetters(["isAuthenticated"]),
   methods: {
@@ -46,12 +55,52 @@ export default {
 </script>
 
 <style scoped lang="postcss" >
+.brand {
+  display: flex;
+  place-items: center;
+  color: chocolate;
+  font-weight: lighter;
+  padding-top: 20px;
+  font-size: 1.7em;
+  display: flex;
+  & h4 {
+    padding-left: 10px;
+  }
+}
+
+#icon {
+  font-size: 2.2rem;
+  color: #000;
+  padding-top: 10px;
+}
+
+.search-box {
+  height: 5.3vh;
+  border-radius: 1px solid #000;
+  border-radius: 5px;
+  width: 30rem;
+  display: flex;
+  margin-top: 13px;
+  padding: 0.2rem 0.2rem;
+  background: #fff;
+  color: #fff;
+  & input {
+    width: 25rem;
+    padding: 0.5rem;
+    border: 0px;
+    outline: none;
+    background: transparent;
+    color: #000;
+    font-size: 1.2rem;
+  }
+}
+
 .link {
   text-decoration: none;
 }
 
 .contain {
-  background: transparent;
+  background: #100e17;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -61,14 +110,6 @@ export default {
   & p {
     padding: 0.4em 2.5rem;
     font-size: 1.1rem;
-  }
-  & h3 {
-    display: flex;
-    place-items: center;
-    color: chocolate;
-    font-weight: lighter;
-    padding-top: 15px;
-    font-size: 1.7em;
   }
   & img {
     height: auto;

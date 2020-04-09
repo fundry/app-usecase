@@ -13,7 +13,7 @@ import {
     Settings,
     List,
     Explore,
-    Publish,
+    Publish, Organization,
     Editor,
     Schedules,
 } from './pages/';
@@ -32,8 +32,6 @@ console.log(a, 'auth');
 const router = new VueRouter({
     mode: 'history',
     routes: [
-        { path: '/login', component: Login, name: 'Login' },
-        { path: '/signup', component: Signup, name: 'Signup' },
         {
             path: '/explore',
             component: Explore,
@@ -54,6 +52,13 @@ const router = new VueRouter({
             path: '/editor',
             component: Editor,
             name: 'Editor',
+            // @ts-ignore
+            redirect: !auth ? '/login' : null,
+        },
+        {
+            path: '/organization',
+            component: Organization,
+            name: 'organization',
             // @ts-ignore
             redirect: !auth ? '/login' : null,
         },

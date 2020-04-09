@@ -11,3 +11,4 @@ export { default as Editor } from "./app/editor/editor.vue";
 export { default as Settings } from "./settings/settings.vue";
 export { default as Publish } from "./app/publish/publish.vue";
 export { default as Schedules } from "./app/schedules/schedule.vue";
+export { default as Organization } from "./app/organization/organization.vue";
