@@ -93,7 +93,7 @@ export default {
 .content {
   text-align: center;
   & img {
-    max-width: 70%;
+    max-width: 80%;
     height: auto;
   }
   & h5 {
