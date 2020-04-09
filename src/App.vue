@@ -15,6 +15,7 @@
 
     <div v-else class="small-device">
       <div class="content">
+        <img alt="Pc" src="./assets/svg/pc.svg" />
         <h5>The Web Console is only accessible via large screen devices.</h5>
         <hr />
         <p>Get the mobile app</p>
@@ -91,6 +92,10 @@ export default {
 
 .content {
   text-align: center;
+  & img {
+    max-width: 70%;
+    height: auto;
+  }
   & h5 {
     margin: 0.5rem 2rem;
     font-size: 1.4rem;

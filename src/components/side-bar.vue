@@ -46,9 +46,6 @@
     <br />
     <br />
     <br />
-    <br />
-    <br />
-    <br />
     <li>
       <router-link to="/settings">
         <BIconGear class="icon" />
