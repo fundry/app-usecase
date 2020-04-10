@@ -6,7 +6,9 @@
 
         <div class="router-contain">
           <Sidebar />
-          <router-view id="view"></router-view>
+          <div class="router-view">
+            <router-view id="view"></router-view>
+          </div>
         </div>
       </div>
 
@@ -67,6 +69,10 @@ export default {
 <style scoped lang="postcss" >
 #view {
   overflow: auto;
+}
+
+.router-view {
+  width: 100%;
 }
 
 .router-contain {

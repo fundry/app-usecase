@@ -8,7 +8,7 @@ const state: any = {
   isAuthenticated: true,
   userDetails: {
     name: "",
-    isOrganization: false
+    isOrganization: true
   }
 };
 
